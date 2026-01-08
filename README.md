@@ -197,6 +197,10 @@
       max-width:62ch;
       font-weight:500;
     }
+     a:focus-visible, button:focus-visible{
+     outline: none;
+     box-shadow: 0 0 0 4px var(--focus);
+    }
     .pillRow{
       display:flex;
       gap:10px;
@@ -556,11 +560,20 @@
         <div class="formRow">
           <div>
             <label for="name">Name</label>
-            <input id="name" name="name" placeholder="Your name" autocomplete="name" required />
+            <input id="name" name="name" autocomplete="name" required />
           </div>
           <div>
             <label for="phone">Phone</label>
-            <input id="phone" name="phone" placeholder="(555) 555-5555" autocomplete="tel" required />
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              inputmode="tel"
+              placeholder="(805) 555-5555"
+              autocomplete="tel"
+              required
+             />
+
           </div>
         </div>
 
@@ -627,6 +640,11 @@
           <button class="btn" type="button" id="copyBtn">Copy message</button>
         </div>
 
+        <div id="fallbackWrap" style="display:none; margin-top:10px">
+          <label for="fallbackText">Copy/paste this message</label>
+          <textarea id="fallbackText" readonly></textarea>
+        </div>
+
         <p class="tiny" style="margin:0">
           This form opens your email app (no data stored on the website).
         </p>
@@ -638,7 +656,7 @@
 
         <div class="notice" style="margin-top:0">
           <div><strong style="color:var(--ink); font-weight:800;">Email:</strong> <span id="emailText">youremail@example.com</span></div>
-          <div style="margin-top:8px"><strong style="color:var(--ink); font-weight:800;">Phone:</strong> <span id="phoneText">(805) 555-1234</span></div>
+          <div style="margin-top:8px"><strong style="color:var(--ink); font-weight:800;">Phone:</strong> <span id="phoneText">(805) 424-7735</span></div>
           <div style="margin-top:8px">
             <strong style="color:var(--ink); font-weight:800;">Instagram:</strong>
             <a href="https://www.instagram.com/light_and_memory_audio?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr"
@@ -714,8 +732,8 @@
 
 <script>
   // ========= UPDATE THESE =========
-  const BUSINESS_EMAIL = "youremail@example.com";     // <-- your real email
-  const BUSINESS_PHONE = "+18055551234";              // <-- your real phone (E.164 format works best)
+  const BUSINESS_EMAIL = "lightandmemoryaudio26@gmail.com";     // <-- your real email
+  const BUSINESS_PHONE = "+18054247735";              // <-- your real phone (E.164 format works best)
   const SERVICE_AREA   = "Simi Valley / Moorpark / Northridge / Thousand Oaks / Santa Clarita / Porter Ranch";
   const HOURS_TEXT     = "By appointment";
 
@@ -733,6 +751,8 @@
   const form = document.getElementById("bookingForm");
   const notice = document.getElementById("formNotice");
   const copyBtn = document.getElementById("copyBtn");
+  const fallbackWrap = document.getElementById("fallbackWrap");
+  const fallbackText = document.getElementById("fallbackText");
 
   function buildMessage(data){
     const subject = `Booking Request — ${data.service} — ${data.name}`;
@@ -796,10 +816,15 @@ Notes:
     const err = validate(data);
     if(err){ setNotice(err, false); return; }
 
-    const msg = buildMessage(data);
-    const mailto = `mailto:${encodeURIComponent(BUSINESS_EMAIL)}?subject=${encodeURIComponent(msg.subject)}&body=${encodeURIComponent(msg.body)}`;
-    setNotice("Opening your email app… If it doesn’t open, click “Copy message” and send it by text/email.", true);
-    window.location.href = mailto;
+      const msg = buildMessage(data);
+
+  // show fallback text in case mailto doesn't open on someone's device
+  fallbackWrap.style.display = "block";
+  fallbackText.value = `Subject: ${msg.subject}\n\n${msg.body}`;
+
+  const mailto = `mailto:${encodeURIComponent(BUSINESS_EMAIL)}?subject=${encodeURIComponent(msg.subject)}&body=${encodeURIComponent(msg.body)}`;
+  setNotice("Opening your email app… If it doesn’t open, copy/paste the message below.", true);
+  window.location.href = mailto;
   });
 
   copyBtn.addEventListener("click", async () => {
