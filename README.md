@@ -7,14 +7,17 @@
 
   <style>
     :root{
-      --bg:#0f0d0b;
-      --text:#f3eadf;
-      --muted:#b8aa9a;
-      --line:rgba(243,234,223,.10);
-      --line2:rgba(243,234,223,.16);
-      --radius:18px;
-      --focus:rgba(214,194,167,.22);
-    }
+  /* Logo-based palette */
+  --bg: #f4efe9;          /* logo cream background */
+  --surface: #eee7df;     /* card surface (slightly darker cream) */
+  --text: #1f1f1f;        /* logo charcoal */
+  --muted: #6b6b6b;       /* soft gray */
+  --line: rgba(0,0,0,.08);
+  --line2: rgba(0,0,0,.14);
+
+  --radius: 18px;
+  --focus: rgba(0,0,0,.08);
+}
 
     *{box-sizing:border-box}
     html{background:var(--bg)}
