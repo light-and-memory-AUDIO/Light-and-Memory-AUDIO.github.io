@@ -35,23 +35,30 @@
     }
 
     *{box-sizing:border-box}
+
     html{background:var(--bg)}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background: var(--bg);
       color: var(--ink);
-      line-height:1.55;
-      letter-spacing:.01em;
+
+      /* ✅ readability boost */
+      font-size: 16.5px;
+      font-weight: 500;
+      line-height: 1.65;
+      letter-spacing: .015em;
     }
 
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 20px}
     @media (max-width:600px){ .wrap{padding:22px 16px} }
 
-    .muted{color:var(--muted)}
-    .tiny{font-size:12px}
-    .small{font-size:13px;color:var(--muted)}
+    p, li{font-weight:500}
+
+    .muted{color:var(--muted); font-weight:500}
+    .tiny{font-size:13px; font-weight:500; color:var(--muted)}
+    .small{font-size:14px; font-weight:500; color:var(--muted)}
     .divider{height:1px; background:var(--line); margin:18px 0}
 
     /* ===== Header ===== */
@@ -96,6 +103,7 @@
       font-size:12px;
       color:var(--muted);
       line-height:1.1;
+      font-weight:500;
     }
 
     nav.links{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
@@ -105,6 +113,7 @@
       padding:8px 10px;
       border-radius:999px;
       border:1px solid transparent;
+      font-weight:600;
     }
     nav.links a:hover{
       color:var(--ink);
@@ -133,7 +142,7 @@
       background: rgba(29,27,24,.02);
       color:var(--ink);
       font-size:13px;
-      font-weight:650;
+      font-weight:700;
       cursor:pointer;
       transition: background .15s ease, transform .06s ease;
       white-space:nowrap;
@@ -167,6 +176,7 @@
       font-size:12px;
       letter-spacing:.06em;
       text-transform:uppercase;
+      font-weight:650;
     }
     .dot{
       width:8px;height:8px;border-radius:99px;
@@ -178,13 +188,14 @@
       font-size:38px;
       line-height:1.07;
       letter-spacing:-.03em;
-      font-weight:850;
+      font-weight:900;
     }
     .hero p{
       margin:0 0 14px;
       color:var(--muted);
-      font-size:15.5px;
+      font-size:16px;
       max-width:62ch;
+      font-weight:500;
     }
     .pillRow{
       display:flex;
@@ -198,7 +209,7 @@
       border:1px solid var(--line2);
       background: rgba(29,27,24,.02);
       font-size:13px;
-      font-weight:700;
+      font-weight:800;
     }
     .pill.soft{
       background: rgba(226,198,189,.30); /* pale dogwood tint */
@@ -214,6 +225,7 @@
       letter-spacing:.10em;
       text-transform:uppercase;
       color:var(--muted);
+      font-weight:800;
     }
     .grid{
       display:grid;
@@ -231,22 +243,25 @@
     }
     .card h3{
       margin:0 0 8px;
-      font-size:15px;
+      font-size:16px;
+      font-weight:700;
       letter-spacing:.02em;
       color: var(--ink);
     }
     .card p{
       margin:0;
       color:var(--muted);
-      font-size:14px;
+      font-size:14.5px;
+      font-weight:500;
     }
     .card ul{
       margin:10px 0 0;
       padding-left:18px;
       color:var(--muted);
-      font-size:14px;
+      font-size:14.5px;
       display:grid;
       gap:6px;
+      font-weight:500;
     }
 
     .notice{
@@ -256,7 +271,8 @@
       border-radius:14px;
       background: rgba(233,221,204,.40); /* linen tint */
       color: var(--muted);
-      font-size:13px;
+      font-size:14px;
+      font-weight:500;
     }
 
     /* ===== Pricing blocks ===== */
@@ -288,6 +304,7 @@
       border:1px solid var(--line);
       background: rgba(29,27,24,.02);
       white-space:nowrap;
+      font-weight:650;
     }
     .bigPrice{
       margin:8px 0 6px;
@@ -314,16 +331,18 @@
       letter-spacing:.08em;
       text-transform:uppercase;
       color:var(--muted);
+      font-weight:800;
     }
     input, select, textarea{
       width:100%;
       padding:12px 12px;
       border-radius:14px;
-      border:1px solid rgba(29,27,24,.14);
-      background: rgba(242,238,233,.70);
+      border:1px solid rgba(29,27,24,.16);
+      background: rgba(242,238,233,.85);
       color: var(--ink);
       outline:none;
-      font-size:14px;
+      font-size:15px;
+      font-weight:500;
     }
     input:focus, select:focus, textarea:focus{
       border-color: rgba(29,27,24,.25);
@@ -338,7 +357,8 @@
       border-top:1px solid var(--line);
       padding:28px 0;
       color:var(--muted);
-      font-size:13px;
+      font-size:14px;
+      font-weight:500;
     }
     .footerGrid{
       display:grid;
@@ -354,6 +374,7 @@
       border-radius:999px;
       border:1px solid transparent;
       font-size:13px;
+      font-weight:650;
     }
     .miniLinks a:hover{
       border-color: var(--line);
@@ -465,9 +486,9 @@
     </div>
 
     <div class="notice">
-      <strong>Current limitations:</strong><br>
+      <strong style="color:var(--ink); font-weight:800;">Current limitations:</strong><br>
       I’m limited to certain repairs and setups due to available tools, supplies, and hardware. This will expand as I continue investing in my shop.<br><br>
-      <strong>Not currently offered:</strong>
+      <strong style="color:var(--ink); font-weight:800;">Not currently offered:</strong>
       <ul style="margin:10px 0 0; padding-left:18px;">
         <li>Fret repair / fretwork</li>
         <li>Structural repairs (neck breaks, cracks, major body damage)</li>
@@ -482,7 +503,7 @@
       <div class="priceCard">
         <div class="priceTop">
           <div>
-            <div class="muted" style="letter-spacing:.08em;text-transform:uppercase;font-size:12px;">Service fee</div>
+            <div class="muted" style="letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:800;">Service fee</div>
             <div class="bigPrice">$50</div>
             <div class="small">Labor/service for setups and in-scope repair work (confirmed before starting).</div>
           </div>
@@ -498,14 +519,14 @@
         </ul>
 
         <p class="small" style="margin-top:12px">
-          <strong>Materials/parts not included.</strong> You approve any parts cost before purchase.
+          <strong style="color:var(--ink); font-weight:800;">Materials/parts not included.</strong> You approve any parts cost before purchase.
         </p>
       </div>
 
       <div class="priceCard">
         <div class="priceTop">
           <div>
-            <div class="muted" style="letter-spacing:.08em;text-transform:uppercase;font-size:12px;">Parts &amp; materials</div>
+            <div class="muted" style="letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:800;">Parts &amp; materials</div>
             <div class="bigPrice">Not included</div>
             <div class="small">Strings, pickups, pots, switches, jacks, hardware, etc. billed separately.</div>
           </div>
@@ -597,7 +618,7 @@
         </div>
 
         <div class="notice" id="formNotice" style="margin-top:0">
-          Service fee: <strong>$50</strong> (materials/parts not included).<br>
+          Service fee: <strong style="color:var(--ink); font-weight:800;">$50</strong> (materials/parts not included).<br>
           Not offered currently: fretwork and structural repairs.
         </div>
 
@@ -606,7 +627,7 @@
           <button class="btn" type="button" id="copyBtn">Copy message</button>
         </div>
 
-        <p class="tiny" style="margin:0" id="privacyNote">
+        <p class="tiny" style="margin:0">
           This form opens your email app (no data stored on the website).
         </p>
       </form>
@@ -616,10 +637,10 @@
         <p class="muted" style="margin:0 0 12px">Update your email/phone in the script near the bottom.</p>
 
         <div class="notice" style="margin-top:0">
-          <div><strong>Email:</strong> <span id="emailText">youremail@example.com</span></div>
-          <div style="margin-top:8px"><strong>Phone:</strong> <span id="phoneText">(805) 555-1234</span></div>
+          <div><strong style="color:var(--ink); font-weight:800;">Email:</strong> <span id="emailText">youremail@example.com</span></div>
+          <div style="margin-top:8px"><strong style="color:var(--ink); font-weight:800;">Phone:</strong> <span id="phoneText">(805) 555-1234</span></div>
           <div style="margin-top:8px">
-            <strong>Instagram:</strong>
+            <strong style="color:var(--ink); font-weight:800;">Instagram:</strong>
             <a href="https://www.instagram.com/light_and_memory_audio?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr"
                target="_blank" rel="noopener noreferrer"
                style="text-decoration:underline; text-underline-offset:3px;">
@@ -627,7 +648,7 @@
             </a>
           </div>
           <div style="margin-top:8px">
-            <strong>Service area:</strong>
+            <strong style="color:var(--ink); font-weight:800;">Service area:</strong>
             <span id="areaText">Simi Valley / Moorpark / Northridge / Thousand Oaks / Santa Clarita / Porter Ranch</span>
           </div>
         </div>
@@ -671,7 +692,7 @@
       <div style="display:flex; gap:10px; align-items:center">
         <img class="logoImg" src="assets/lama.jpg" alt="Light and Memory Audio logo" />
         <div>
-          <div style="font-weight:800; letter-spacing:.08em; text-transform:uppercase;">Light and Memory Audio</div>
+          <div style="font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:var(--ink);">Light and Memory Audio</div>
           <div class="tiny">Service fee: $50 • Materials/parts not included</div>
         </div>
       </div>
@@ -698,21 +719,17 @@
   const SERVICE_AREA   = "Simi Valley / Moorpark / Northridge / Thousand Oaks / Santa Clarita / Porter Ranch";
   const HOURS_TEXT     = "By appointment";
 
-  // Header year
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Populate contact info
   document.getElementById("emailText").textContent = BUSINESS_EMAIL;
   document.getElementById("phoneText").textContent = formatPhoneForDisplay(BUSINESS_PHONE) || BUSINESS_PHONE;
   document.getElementById("areaText").textContent = SERVICE_AREA;
   document.getElementById("locationText").textContent = SERVICE_AREA;
   document.getElementById("hoursText").textContent = HOURS_TEXT;
 
-  // Call/Text buttons
   document.getElementById("callBtn").href = `tel:${BUSINESS_PHONE}`;
   document.getElementById("textBtn").href = `sms:${BUSINESS_PHONE}`;
 
-  // Booking form
   const form = document.getElementById("bookingForm");
   const notice = document.getElementById("formNotice");
   const copyBtn = document.getElementById("copyBtn");
