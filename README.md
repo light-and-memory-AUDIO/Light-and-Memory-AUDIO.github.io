@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -5,25 +6,21 @@
   <title>Light and Memory Audio</title>
   <meta name="description" content="Light and Memory Audio — Service fee $30 (materials/parts not included). Serving Simi Valley, Moorpark, Northridge, Thousand Oaks, Santa Clarita, Porter Ranch." />
 
-  <!-- Optional: social preview image (add assets/preview.jpg if you want link previews) -->
   <meta property="og:title" content="Light and Memory Audio" />
   <meta property="og:description" content="Service fee $30 (materials/parts not included). Setups & select repairs." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/preview.jpg" />
 
   <style>
-    /* ===== Creamy Poetry palette (logo-friendly, warm, premium) ===== */
     :root{
-      /* Core palette */
-      --bg: #F2EEE9;        /* Isabelline (paper) */
-      --surface: #E8DED3;   /* warm cream / light brown */
-      --surface2:#E1D6C9;   /* slightly deeper warm brown */
-      --ink: #1D1B18;       /* near-black ink */
-      --muted: #5E564D;     /* warm gray text */
+      --bg: #F2EEE9;
+      --surface: #E8DED3;
+      --surface2:#E1D6C9;
+      --ink: #1D1B18;
+      --muted: #5E564D;
       --line: rgba(29,27,24,.10);
       --line2: rgba(29,27,24,.16);
 
-      /* Accents (subtle) */
       --almond: #C9BBAA;
       --timberwolf: #D8D3CB;
       --linen: #E9DDCC;
@@ -42,8 +39,6 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background: var(--bg);
       color: var(--ink);
-
-      /* ✅ readability boost */
       font-size: 16.5px;
       font-weight: 500;
       line-height: 1.65;
@@ -60,6 +55,11 @@
     .tiny{font-size:13px; font-weight:500; color:var(--muted)}
     .small{font-size:14px; font-weight:500; color:var(--muted)}
     .divider{height:1px; background:var(--line); margin:18px 0}
+
+    a:focus-visible, button:focus-visible{
+      outline: none;
+      box-shadow: 0 0 0 4px var(--focus);
+    }
 
     /* ===== Header ===== */
     header{
@@ -197,10 +197,6 @@
       max-width:62ch;
       font-weight:500;
     }
-     a:focus-visible, button:focus-visible{
-     outline: none;
-     box-shadow: 0 0 0 4px var(--focus);
-    }
     .pillRow{
       display:flex;
       gap:10px;
@@ -216,7 +212,7 @@
       font-weight:800;
     }
     .pill.soft{
-      background: rgba(226,198,189,.30); /* pale dogwood tint */
+      background: rgba(226,198,189,.30);
       border-color: rgba(29,27,24,.12);
       color: var(--ink);
     }
@@ -273,7 +269,7 @@
       padding:14px;
       border:1px dashed rgba(29,27,24,.18);
       border-radius:14px;
-      background: rgba(233,221,204,.40); /* linen tint */
+      background: rgba(233,221,204,.40);
       color: var(--muted);
       font-size:14px;
       font-weight:500;
@@ -385,100 +381,97 @@
       color: var(--ink);
       background: rgba(29,27,24,.03);
     }
+
     /* ===== Mobile header menu ===== */
+    .ctaDesktop{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap: nowrap; /* keep one row on desktop */
+      justify-content:flex-end;
+    }
+    .menuBtn{ display:none; padding:10px 12px; }
 
-.ctaDesktop { display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
+    .hamburger{
+      width:18px;
+      height:2px;
+      background: var(--ink);
+      display:inline-block;
+      position:relative;
+      border-radius:99px;
+    }
+    .hamburger::before,
+    .hamburger::after{
+      content:"";
+      position:absolute;
+      left:0;
+      width:18px;
+      height:2px;
+      background: var(--ink);
+      border-radius:99px;
+    }
+    .hamburger::before{ top:-6px; }
+    .hamburger::after{ top:6px; }
 
-.menuBtn { display:none; padding:10px 12px; }
+    .menuOverlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(29,27,24,.35);
+      backdrop-filter: blur(4px);
+      z-index: 50;
+    }
 
-.hamburger{
-  width:18px;
-  height:2px;
-  background: var(--ink);
-  display:inline-block;
-  position:relative;
-  border-radius:99px;
-}
-.hamburger::before,
-.hamburger::after{
-  content:"";
-  position:absolute;
-  left:0;
-  width:18px;
-  height:2px;
-  background: var(--ink);
-  border-radius:99px;
-}
-.hamburger::before{ top:-6px; }
-.hamburger::after{ top:6px; }
+    .mobileMenu{
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: min(84vw, 360px);
+      background: var(--bg);
+      border-left: 1px solid var(--line);
+      z-index: 60;
+      transform: translateX(102%);
+      transition: transform .18s ease;
+      padding: 18px;
+      display: grid;
+      align-content: start;
+    }
+    .mobileMenu.open{ transform: translateX(0); }
 
-/* Slide-in panel */
-.menuOverlay{
-  position: fixed;
-  inset: 0;
-  background: rgba(29,27,24,.35);
-  backdrop-filter: blur(4px);
-  z-index: 50;
-}
+    .mobileMenuTop{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+    }
+    .mobileMenuActions{ display:grid; gap:10px; }
+    .mobileMenuNav{ display:grid; gap:8px; }
 
-.mobileMenu{
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: min(84vw, 360px);
-  background: var(--bg);
-  border-left: 1px solid var(--line);
-  z-index: 60;
-  transform: translateX(102%);
-  transition: transform .18s ease;
-  padding: 18px;
-  display: grid;
-  align-content: start;
-}
+    .mobileMenuNav a{
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(29,27,24,.02);
+      color: var(--muted);
+      font-weight:700;
+    }
+    .mobileMenuNav a:hover{
+      color: var(--ink);
+      background: rgba(29,27,24,.05);
+    }
 
-.mobileMenu.open{ transform: translateX(0); }
+    /* Switch to hamburger on <= 920px */
+    @media (max-width: 920px){
+      .ctaDesktop{ display:none; }
+      .menuBtn{ display:inline-flex; }
+      .brand{ min-width: 0; }
+    }
 
-.mobileMenuTop{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-}
-
-.mobileMenuActions{
-  display:grid;
-  gap:10px;
-}
-
-.mobileMenuNav{
-  display:grid;
-  gap:8px;
-}
-
-.mobileMenuNav a{
-  padding:10px 12px;
-  border-radius:14px;
-  border:1px solid var(--line);
-  background: rgba(29,27,24,.02);
-  color: var(--muted);
-  font-weight:700;
-}
-.mobileMenuNav a:hover{
-  color: var(--ink);
-  background: rgba(29,27,24,.05);
-}
-
-/* On small screens: hide stacked CTA buttons and use hamburger */
-@media (max-width: 920px){
-  nav.links{ display:none; } /* already in your code, ok */
-}
-
-@media (max-width: 640px){
-  .ctaDesktop{ display:none; }
-  .menuBtn{ display:inline-flex; }
-  .brand{ min-width: 0; }
-}
+    /* Desktop safety: never show mobile menu/overlay */
+    @media (min-width: 921px){
+      .menuOverlay{ display:none !important; }
+      .mobileMenu{ display:none !important; }
+    }
   </style>
 </head>
 
@@ -502,19 +495,18 @@
       </nav>
 
       <div class="cta">
-    <div class="ctaDesktop">
-    <!-- UPDATE THESE -->
-    <a class="btn" id="callBtn" href="tel:+18055551234">Call</a>
-    <a class="btn" id="textBtn" href="sms:+18055551234">Text</a>
-    <a class="btn" href="https://www.instagram.com/light_and_memory_audio?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
-    <a class="btn primary" href="#booking">Book</a>
+        <div class="ctaDesktop">
+          <a class="btn" id="callBtn" href="tel:+18055551234">Call</a>
+          <a class="btn" id="textBtn" href="sms:+18055551234">Text</a>
+          <a class="btn" href="https://www.instagram.com/light_and_memory_audio?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a class="btn primary" href="#booking">Book</a>
+        </div>
+
+        <button class="btn menuBtn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+      </div>
     </div>
-
-    <button class="btn menuBtn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-    <span class="hamburger" aria-hidden="true"></span>
-    </button>
-  </div>
-
   </div>
 </header>
 
@@ -700,20 +692,11 @@
         <div class="formRow">
           <div>
             <label for="name">Name</label>
-            <input id="name" name="name" autocomplete="name" required />
+            <input id="name" name="name" placeholder="Your name" autocomplete="name" required />
           </div>
           <div>
             <label for="phone">Phone</label>
-            <input
-              id="phone"
-              name="phone"
-              type="tel"
-              inputmode="tel"
-              placeholder="(805) 555-5555"
-              autocomplete="tel"
-              required
-             />
-
+            <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(805) 555-5555" autocomplete="tel" required />
           </div>
         </div>
 
@@ -796,7 +779,7 @@
 
         <div class="notice" style="margin-top:0">
           <div><strong style="color:var(--ink); font-weight:800;">Email:</strong> <span id="emailText">youremail@example.com</span></div>
-          <div style="margin-top:8px"><strong style="color:var(--ink); font-weight:800;">Phone:</strong> <span id="phoneText">(805) 424-7735</span></div>
+          <div style="margin-top:8px"><strong style="color:var(--ink); font-weight:800;">Phone:</strong> <span id="phoneText">(805) 555-1234</span></div>
           <div style="margin-top:8px">
             <strong style="color:var(--ink); font-weight:800;">Instagram:</strong>
             <a href="https://www.instagram.com/light_and_memory_audio?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr"
@@ -872,8 +855,8 @@
 
 <script>
   // ========= UPDATE THESE =========
-  const BUSINESS_EMAIL = "lightandmemoryaudio26@gmail.com";     // <-- your real email
-  const BUSINESS_PHONE = "+18054247735";              // <-- your real phone (E.164 format works best)
+  const BUSINESS_EMAIL = "lightandmemoryaudio26@gmail.com";
+  const BUSINESS_PHONE = "+18054247735";
   const SERVICE_AREA   = "Simi Valley / Moorpark / Northridge / Thousand Oaks / Santa Clarita / Porter Ranch";
   const HOURS_TEXT     = "By appointment";
 
@@ -887,45 +870,49 @@
 
   document.getElementById("callBtn").href = `tel:${BUSINESS_PHONE}`;
   document.getElementById("textBtn").href = `sms:${BUSINESS_PHONE}`;
-  // ===== Mobile menu wiring =====
-const menuBtn = document.getElementById("menuBtn");
-const closeMenuBtn = document.getElementById("closeMenuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
-const menuOverlay = document.getElementById("menuOverlay");
 
-// keep mobile buttons in sync with the same phone number
-document.getElementById("callBtnMobile").href = `tel:${BUSINESS_PHONE}`;
-document.getElementById("textBtnMobile").href = `sms:${BUSINESS_PHONE}`;
+  // ===== Mobile menu wiring (safe) =====
+  const menuBtn = document.getElementById("menuBtn");
+  const closeMenuBtn = document.getElementById("closeMenuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuOverlay = document.getElementById("menuOverlay");
 
-function openMenu(){
-  mobileMenu.classList.add("open");
-  mobileMenu.setAttribute("aria-hidden", "false");
-  menuOverlay.hidden = false;
-  menuBtn.setAttribute("aria-expanded", "true");
-  document.body.style.overflow = "hidden";
-}
+  if(menuBtn && closeMenuBtn && mobileMenu && menuOverlay){
+    const callBtnMobile = document.getElementById("callBtnMobile");
+    const textBtnMobile = document.getElementById("textBtnMobile");
+    if(callBtnMobile) callBtnMobile.href = `tel:${BUSINESS_PHONE}`;
+    if(textBtnMobile) textBtnMobile.href = `sms:${BUSINESS_PHONE}`;
 
-function closeMenu(){
-  mobileMenu.classList.remove("open");
-  mobileMenu.setAttribute("aria-hidden", "true");
-  menuOverlay.hidden = true;
-  menuBtn.setAttribute("aria-expanded", "false");
-  document.body.style.overflow = "";
-}
+    function openMenu(){
+      mobileMenu.classList.add("open");
+      mobileMenu.setAttribute("aria-hidden", "false");
+      menuOverlay.hidden = false;
+      menuBtn.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
 
-menuBtn.addEventListener("click", openMenu);
-closeMenuBtn.addEventListener("click", closeMenu);
-menuOverlay.addEventListener("click", closeMenu);
+    function closeMenu(){
+      mobileMenu.classList.remove("open");
+      mobileMenu.setAttribute("aria-hidden", "true");
+      menuOverlay.hidden = true;
+      menuBtn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
 
-document.addEventListener("keydown", (e) => {
-  if(e.key === "Escape") closeMenu();
-});
+    menuBtn.addEventListener("click", openMenu);
+    closeMenuBtn.addEventListener("click", closeMenu);
+    menuOverlay.addEventListener("click", closeMenu);
 
-// close menu when user clicks a menu link
-mobileMenu.querySelectorAll("[data-close-menu]").forEach((el) => {
-  el.addEventListener("click", closeMenu);
-});
+    document.addEventListener("keydown", (e) => {
+      if(e.key === "Escape") closeMenu();
+    });
 
+    mobileMenu.querySelectorAll("[data-close-menu]").forEach((el) => {
+      el.addEventListener("click", closeMenu);
+    });
+  }
+
+  // ===== Booking form =====
   const form = document.getElementById("bookingForm");
   const notice = document.getElementById("formNotice");
   const copyBtn = document.getElementById("copyBtn");
@@ -953,7 +940,6 @@ Notes:
 - Not currently offered: fret repair/fretwork, structural repairs
 
 — Sent from the website`;
-
     return { subject, body };
   }
 
@@ -994,15 +980,14 @@ Notes:
     const err = validate(data);
     if(err){ setNotice(err, false); return; }
 
-      const msg = buildMessage(data);
+    const msg = buildMessage(data);
 
-  // show fallback text in case mailto doesn't open on someone's device
-  fallbackWrap.style.display = "block";
-  fallbackText.value = `Subject: ${msg.subject}\n\n${msg.body}`;
+    fallbackWrap.style.display = "block";
+    fallbackText.value = `Subject: ${msg.subject}\n\n${msg.body}`;
 
-  const mailto = `mailto:${encodeURIComponent(BUSINESS_EMAIL)}?subject=${encodeURIComponent(msg.subject)}&body=${encodeURIComponent(msg.body)}`;
-  setNotice("Opening your email app… If it doesn’t open, copy/paste the message below.", true);
-  window.location.href = mailto;
+    const mailto = `mailto:${encodeURIComponent(BUSINESS_EMAIL)}?subject=${encodeURIComponent(msg.subject)}&body=${encodeURIComponent(msg.body)}`;
+    setNotice("Opening your email app… If it doesn’t open, copy/paste the message below.", true);
+    window.location.href = mailto;
   });
 
   copyBtn.addEventListener("click", async () => {
