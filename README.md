@@ -20,14 +20,17 @@
 }
 
     *{box-sizing:border-box}
-    html{background:var(--bg)}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.55;
-    }
+    html{
+  background: var(--bg);
+}
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.55;
+}
 
     a{color:inherit;text-decoration:none}
     .wrap{max-width:980px;margin:0 auto;padding:28px 20px}
@@ -68,19 +71,19 @@
     nav a:hover{color:var(--text)}
 
     .btn{
-      padding:9px 14px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:transparent;
-      color:var(--text);
-      font-size:13px;
-      cursor:pointer;
-    }
-    .btn.primary{
-      border-color:var(--line2);
-      background:rgba(214,194,167,.12);
-    }
+  padding:9px 14px;
+  border-radius:999px;
+  border:1px solid var(--line2);
+  background: transparent;
+  color: var(--text);
+  font-size:13px;
+  cursor:pointer;
+}
 
+.btn.primary{
+  background: var(--text);
+  color: var(--bg);
+}
     /* Hero */
     .hero{
       margin-top:28px;
