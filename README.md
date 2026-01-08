@@ -385,6 +385,100 @@
       color: var(--ink);
       background: rgba(29,27,24,.03);
     }
+    /* ===== Mobile header menu ===== */
+
+.ctaDesktop { display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
+
+.menuBtn { display:none; padding:10px 12px; }
+
+.hamburger{
+  width:18px;
+  height:2px;
+  background: var(--ink);
+  display:inline-block;
+  position:relative;
+  border-radius:99px;
+}
+.hamburger::before,
+.hamburger::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:18px;
+  height:2px;
+  background: var(--ink);
+  border-radius:99px;
+}
+.hamburger::before{ top:-6px; }
+.hamburger::after{ top:6px; }
+
+/* Slide-in panel */
+.menuOverlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(29,27,24,.35);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+}
+
+.mobileMenu{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(84vw, 360px);
+  background: var(--bg);
+  border-left: 1px solid var(--line);
+  z-index: 60;
+  transform: translateX(102%);
+  transition: transform .18s ease;
+  padding: 18px;
+  display: grid;
+  align-content: start;
+}
+
+.mobileMenu.open{ transform: translateX(0); }
+
+.mobileMenuTop{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+.mobileMenuActions{
+  display:grid;
+  gap:10px;
+}
+
+.mobileMenuNav{
+  display:grid;
+  gap:8px;
+}
+
+.mobileMenuNav a{
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background: rgba(29,27,24,.02);
+  color: var(--muted);
+  font-weight:700;
+}
+.mobileMenuNav a:hover{
+  color: var(--ink);
+  background: rgba(29,27,24,.05);
+}
+
+/* On small screens: hide stacked CTA buttons and use hamburger */
+@media (max-width: 920px){
+  nav.links{ display:none; } /* already in your code, ok */
+}
+
+@media (max-width: 640px){
+  .ctaDesktop{ display:none; }
+  .menuBtn{ display:inline-flex; }
+  .brand{ min-width: 0; }
+}
   </style>
 </head>
 
@@ -408,15 +502,60 @@
       </nav>
 
       <div class="cta">
-        <!-- UPDATE THESE -->
-        <a class="btn" id="callBtn" href="tel:+18055551234">Call</a>
-        <a class="btn" id="textBtn" href="sms:+18055551234">Text</a>
-        <a class="btn" href="https://www.instagram.com/light_and_memory_audio?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a class="btn primary" href="#booking">Book</a>
-      </div>
+    <div class="ctaDesktop">
+    <!-- UPDATE THESE -->
+    <a class="btn" id="callBtn" href="tel:+18055551234">Call</a>
+    <a class="btn" id="textBtn" href="sms:+18055551234">Text</a>
+    <a class="btn" href="https://www.instagram.com/light_and_memory_audio?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a class="btn primary" href="#booking">Book</a>
     </div>
+
+    <button class="btn menuBtn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span class="hamburger" aria-hidden="true"></span>
+    </button>
+  </div>
+
   </div>
 </header>
+<div class="menuOverlay" id="menuOverlay" hidden></div>
+
+<aside class="mobileMenu" id="mobileMenu" aria-hidden="true">
+  <div class="mobileMenuTop">
+    <div style="display:flex; align-items:center; gap:10px">
+      <img class="logoImg" src="assets/lama.jpg" alt="" />
+      <div>
+        <div class="brandTitle" style="font-size:13px">Light and Memory Audio</div>
+        <div class="brandSub">Setups. Repairs. Pro feel.</div>
+      </div>
+    </div>
+
+    <button class="btn" id="closeMenuBtn" type="button" aria-label="Close menu">Close</button>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="mobileMenuActions">
+    <a class="btn" id="callBtnMobile" href="tel:+18055551234">Call</a>
+    <a class="btn" id="textBtnMobile" href="sms:+18055551234">Text</a>
+    <a class="btn" href="https://www.instagram.com/light_and_memory_audio?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a class="btn primary" href="#booking" data-close-menu>Book</a>
+  </div>
+
+  <div class="divider"></div>
+
+  <nav class="mobileMenuNav" aria-label="Mobile navigation">
+    <a href="#services" data-close-menu>Services</a>
+    <a href="#pricing" data-close-menu>Pricing</a>
+    <a href="#booking" data-close-menu>Booking</a>
+    <a href="#faq" data-close-menu>FAQ</a>
+  </nav>
+
+  <div class="divider"></div>
+
+  <p class="tiny" style="margin:0">
+    Service fee: $30 • Materials/parts not included
+  </p>
+</aside>
 
 <main id="top" class="wrap">
 
@@ -747,6 +886,44 @@
 
   document.getElementById("callBtn").href = `tel:${BUSINESS_PHONE}`;
   document.getElementById("textBtn").href = `sms:${BUSINESS_PHONE}`;
+  // ===== Mobile menu wiring =====
+const menuBtn = document.getElementById("menuBtn");
+const closeMenuBtn = document.getElementById("closeMenuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const menuOverlay = document.getElementById("menuOverlay");
+
+// keep mobile buttons in sync with the same phone number
+document.getElementById("callBtnMobile").href = `tel:${BUSINESS_PHONE}`;
+document.getElementById("textBtnMobile").href = `sms:${BUSINESS_PHONE}`;
+
+function openMenu(){
+  mobileMenu.classList.add("open");
+  mobileMenu.setAttribute("aria-hidden", "false");
+  menuOverlay.hidden = false;
+  menuBtn.setAttribute("aria-expanded", "true");
+  document.body.style.overflow = "hidden";
+}
+
+function closeMenu(){
+  mobileMenu.classList.remove("open");
+  mobileMenu.setAttribute("aria-hidden", "true");
+  menuOverlay.hidden = true;
+  menuBtn.setAttribute("aria-expanded", "false");
+  document.body.style.overflow = "";
+}
+
+menuBtn.addEventListener("click", openMenu);
+closeMenuBtn.addEventListener("click", closeMenu);
+menuOverlay.addEventListener("click", closeMenu);
+
+document.addEventListener("keydown", (e) => {
+  if(e.key === "Escape") closeMenu();
+});
+
+// close menu when user clicks a menu link
+mobileMenu.querySelectorAll("[data-close-menu]").forEach((el) => {
+  el.addEventListener("click", closeMenu);
+});
 
   const form = document.getElementById("bookingForm");
   const notice = document.getElementById("formNotice");
