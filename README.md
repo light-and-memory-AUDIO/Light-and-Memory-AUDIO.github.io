@@ -478,7 +478,7 @@
   <div class="wrap">
     <div class="nav">
       <a class="brand" href="#top" aria-label="Light and Memory Audio Home">
-        <img class="logoImg" src="assets/lama.jpg" alt="Light and Memory Audio logo" />
+        <img class="logoImg" src="lama.jpg" alt="Light and Memory Audio logo" />
         <div>
           <div class="brandTitle">Light and Memory Audio</div>
           <div class="brandSub">Setups. Repairs. Pro feel.</div>
