@@ -3,11 +3,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Light and Memory Audio</title>
-  <meta name="description" content="Light and Memory Audio — Service fee $50 (materials/parts not included). Serving Simi Valley, Moorpark, Northridge, Thousand Oaks, Santa Clarita, Porter Ranch." />
+  <meta name="description" content="Light and Memory Audio — Service fee $40 (materials/parts not included). Serving Simi Valley, Moorpark, Northridge, Thousand Oaks, Santa Clarita, Porter Ranch." />
 
   <!-- Optional: social preview image (add assets/preview.jpg if you want link previews) -->
   <meta property="og:title" content="Light and Memory Audio" />
-  <meta property="og:description" content="Service fee $50 (materials/parts not included). Setups & select repairs." />
+  <meta property="og:description" content="Service fee $40 (materials/parts not included). Setups & select repairs." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/preview.jpg" />
 
@@ -16,8 +16,8 @@
     :root{
       /* Core palette */
       --bg: #F2EEE9;        /* Isabelline (paper) */
-      --surface: #EFE8E1;   /* soft card surface */
-      --surface2:#E9E1D8;   /* slightly deeper surface */
+      --surface: #E8DED3;   /* warm cream / light brown */
+      --surface2:#E1D6C9;   /* slightly deeper warm brown */
       --ink: #1D1B18;       /* near-black ink */
       --muted: #5E564D;     /* warm gray text */
       --line: rgba(29,27,24,.10);
