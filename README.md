@@ -3,11 +3,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Light and Memory Audio</title>
-  <meta name="description" content="Light and Memory Audio — Service fee $40 (materials/parts not included). Serving Simi Valley, Moorpark, Northridge, Thousand Oaks, Santa Clarita, Porter Ranch." />
+  <meta name="description" content="Light and Memory Audio — Service fee $30 (materials/parts not included). Serving Simi Valley, Moorpark, Northridge, Thousand Oaks, Santa Clarita, Porter Ranch." />
 
   <!-- Optional: social preview image (add assets/preview.jpg if you want link previews) -->
   <meta property="og:title" content="Light and Memory Audio" />
-  <meta property="og:description" content="Service fee $40 (materials/parts not included). Setups & select repairs." />
+  <meta property="og:description" content="Service fee $30 (materials/parts not included). Setups & select repairs." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/preview.jpg" />
 
@@ -427,7 +427,7 @@
     </p>
 
     <div class="pillRow" aria-label="Pricing highlights">
-      <div class="pill soft">Service Fee: $50</div>
+      <div class="pill soft">Service Fee: $30</div>
       <div class="pill">Materials / parts not included</div>
     </div>
 
@@ -504,7 +504,7 @@
         <div class="priceTop">
           <div>
             <div class="muted" style="letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:800;">Service fee</div>
-            <div class="bigPrice">$50</div>
+            <div class="bigPrice">$30</div>
             <div class="small">Labor/service for setups and in-scope repair work (confirmed before starting).</div>
           </div>
           <div class="tag">Upfront</div>
@@ -579,8 +579,8 @@
             <label for="service">Service</label>
             <select id="service" name="service" required>
               <option value="" selected disabled>Select one</option>
-              <option value="Service Fee ($50) — Setup">Service Fee ($50) — Setup</option>
-              <option value="Service Fee ($50) — Repair / Install">Service Fee ($50) — Repair / Install</option>
+              <option value="Service Fee ($30) — Setup">Service Fee ($30) — Setup</option>
+              <option value="Service Fee ($30) — Repair / Install">Service Fee ($30) — Repair / Install</option>
               <option value="Not sure — help me decide">Not sure — help me decide</option>
             </select>
           </div>
@@ -618,7 +618,7 @@
         </div>
 
         <div class="notice" id="formNotice" style="margin-top:0">
-          Service fee: <strong style="color:var(--ink); font-weight:800;">$50</strong> (materials/parts not included).<br>
+          Service fee: <strong style="color:var(--ink); font-weight:800;">$30</strong> (materials/parts not included).<br>
           Not offered currently: fretwork and structural repairs.
         </div>
 
@@ -693,7 +693,7 @@
         <img class="logoImg" src="assets/lama.jpg" alt="Light and Memory Audio logo" />
         <div>
           <div style="font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:var(--ink);">Light and Memory Audio</div>
-          <div class="tiny">Service fee: $50 • Materials/parts not included</div>
+          <div class="tiny">Service fee: $30 • Materials/parts not included</div>
         </div>
       </div>
 
@@ -750,7 +750,7 @@ Details:
 ${data.details}
 
 Notes:
-- Service fee: $50
+- Service fee: $30
 - Materials/parts not included (approved before purchase)
 - Not currently offered: fret repair/fretwork, structural repairs
 
