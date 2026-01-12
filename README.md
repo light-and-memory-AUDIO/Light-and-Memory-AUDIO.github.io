@@ -2,86 +2,66 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Light and Memory Audio</title>
-  <meta name="description" content="Light and Memory Audio — Service fee $30 (materials/parts not included). Serving Simi Valley, Moorpark, Northridge, Thousand Oaks, Santa Clarita, Porter Ranch." />
+
+  <meta name="description" content="Light and Memory Audio — $30 service fee for guitar setups and select repairs. Serving Simi Valley and surrounding areas." />
 
   <!-- Social preview -->
   <meta property="og:title" content="Light and Memory Audio" />
-  <meta property="og:description" content="Service fee $30 (materials/parts not included). Setups & select repairs." />
+  <meta property="og:description" content="$30 service fee • Transparent pricing • By appointment" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/preview.jpg" />
-
-  <!-- Favicons (optional files in /assets) -->
-  <link rel="icon" href="assets/favicon.ico" />
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-  <meta name="theme-color" content="#F2EEE9" />
+  <meta property="og:image" content="assets/lama.jpeg" />
 
   <style>
     :root{
-      --bg: #F2EEE9;
-      --surface: #E8DED3;
-      --surface2:#E1D6C9;
-      --ink: #1D1B18;
-      --muted: #5E564D;
-      --line: rgba(29,27,24,.10);
-      --line2: rgba(29,27,24,.16);
-
-      --linen: #E9DDCC;
-      --paledogwood: #E2C6BD;
-
-      --radius: 18px;
-      --max: 980px;
-      --focus: rgba(29,27,24,.10);
-      --shadow: 0 14px 38px rgba(29,27,24,.07);
+      --bg:#F2EEE9;
+      --surface:#E8DED3;
+      --ink:#1D1B18;
+      --muted:#5E564D;
+      --line:rgba(29,27,24,.10);
+      --line2:rgba(29,27,24,.16);
+      --radius:18px;
+      --max:980px;
+      --focus:rgba(29,27,24,.10);
     }
 
     *{box-sizing:border-box}
-    html{background:var(--bg)}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: var(--bg);
-      color: var(--ink);
-      font-size: 16.5px;
-      font-weight: 500;
-      line-height: 1.65;
-      letter-spacing: .015em;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:var(--bg);
+      color:var(--ink);
+      font-size:16.5px;
+      line-height:1.65;
+      letter-spacing:.015em;
     }
 
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 20px}
-    @media (max-width:600px){ .wrap{padding:22px 16px} }
-
-    p, li{font-weight:500}
-    .muted{color:var(--muted); font-weight:500}
-    .tiny{font-size:13px; font-weight:500; color:var(--muted)}
-    .small{font-size:14px; font-weight:500; color:var(--muted)}
-    .divider{height:1px; background:var(--line); margin:18px 0}
-
-    a:focus-visible, button:focus-visible{
-      outline: none;
-      box-shadow: 0 0 0 4px var(--focus);
-    }
+    img{display:block}
+    .wrap{max-width:var(--max);margin:0 auto;padding:26px 20px}
+    .divider{height:1px;background:var(--line);margin:18px 0}
+    .muted{color:var(--muted)}
+    .tiny{font-size:13px;color:var(--muted)}
+    .small{font-size:14px;color:var(--muted)}
 
     /* ===== Header ===== */
     header{
       position:sticky;
       top:0;
-      z-index:10;
-      background: rgba(242,238,233,.88);
-      backdrop-filter: blur(10px);
+      z-index:20;
+      background:rgba(242,238,233,.9);
+      backdrop-filter:blur(10px);
       border-bottom:1px solid var(--line);
     }
     .nav{
       display:flex;
-      justify-content:space-between;
       align-items:center;
+      justify-content:space-between;
       gap:16px;
     }
     .brand{
       display:flex;
-      align-items:center;
       gap:12px;
-      min-width:240px;
+      align-items:center;
     }
     .logoImg{
       width:40px;
@@ -89,464 +69,198 @@
       border-radius:14px;
       border:1px solid var(--line2);
       object-fit:cover;
-      background: var(--surface);
+      background:var(--surface);
     }
     .brandTitle{
-      margin:0;
       font-size:14px;
       letter-spacing:.08em;
       text-transform:uppercase;
       font-weight:800;
-      line-height:1.1;
     }
     .brandSub{
-      margin:3px 0 0;
       font-size:12px;
       color:var(--muted);
-      line-height:1.1;
-      font-weight:500;
     }
 
-    nav.links{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    nav.links{
+      display:flex;
+      gap:14px;
+    }
     nav.links a{
       font-size:13px;
       color:var(--muted);
       padding:8px 10px;
       border-radius:999px;
-      border:1px solid transparent;
       font-weight:600;
     }
     nav.links a:hover{
+      background:rgba(29,27,24,.05);
       color:var(--ink);
-      border-color: var(--line);
-      background: rgba(29,27,24,.03);
-    }
-    @media (max-width:920px){
-      nav.links{display:none}
     }
 
     .cta{
       display:flex;
       gap:10px;
       align-items:center;
-      flex-wrap:wrap;
-      justify-content:flex-end;
     }
+    .ctaDesktop{
+      display:flex;
+      gap:10px;
+      flex-wrap:nowrap;
+    }
+
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
       padding:10px 12px;
       border-radius:999px;
       border:1px solid var(--line2);
-      background: rgba(29,27,24,.02);
-      color:var(--ink);
+      background:rgba(29,27,24,.02);
       font-size:13px;
       font-weight:700;
       cursor:pointer;
-      transition: background .15s ease, transform .06s ease;
-      white-space:nowrap;
     }
-    .btn:hover{background: rgba(29,27,24,.05)}
-    .btn:active{transform: translateY(1px)}
     .btn.primary{
-      background: var(--ink);
-      color: var(--bg);
-      border-color: var(--ink);
+      background:var(--ink);
+      color:var(--bg);
+      border-color:var(--ink);
     }
-    .btn.primary:hover{background: #11100e}
 
-    /* ===== Hero ===== */
-    .hero{
-      margin-top:22px;
+    /* Hamburger */
+    .menuBtn{display:none}
+    .hamburger{
+      width:18px;height:2px;background:var(--ink);
+      position:relative;border-radius:99px;
+    }
+    .hamburger::before,.hamburger::after{
+      content:"";position:absolute;left:0;width:18px;height:2px;
+      background:var(--ink);border-radius:99px;
+    }
+    .hamburger::before{top:-6px}
+    .hamburger::after{top:6px}
+
+    /* Mobile menu */
+    .menuOverlay{
+      position:fixed;inset:0;
+      background:rgba(29,27,24,.35);
+      z-index:50;
+    }
+    .mobileMenu{
+      position:fixed;top:0;right:0;
+      width:min(84vw,360px);
+      height:100vh;
+      background:var(--bg);
+      border-left:1px solid var(--line);
+      padding:18px;
+      transform:translateX(105%);
+      transition:.2s ease;
+      z-index:60;
+      display:grid;
+      gap:14px;
+    }
+    .mobileMenu.open{transform:translateX(0)}
+
+    .mobileMenuNav a{
+      display:block;
+      padding:10px 12px;
       border:1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, var(--surface), rgba(242,238,233,.55));
-      padding:24px;
-      box-shadow: var(--shadow);
-    }
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(29,27,24,.02);
-      color:var(--muted);
-      font-size:12px;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      font-weight:650;
-    }
-    .dot{
-      width:8px;height:8px;border-radius:99px;
-      background: var(--paledogwood);
-      border:1px solid rgba(29,27,24,.10);
-    }
-    .hero h1{
-      margin:14px 0 10px;
-      font-size:38px;
-      line-height:1.07;
-      letter-spacing:-.03em;
-      font-weight:900;
-    }
-    .hero p{
-      margin:0 0 14px;
-      color:var(--muted);
-      font-size:16px;
-      max-width:62ch;
-      font-weight:500;
-    }
-    .pillRow{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin:16px 0 18px;
-    }
-    .pill{
-      padding:8px 12px;
       border-radius:14px;
-      border:1px solid var(--line2);
-      background: rgba(29,27,24,.02);
-      font-size:13px;
-      font-weight:800;
+      font-weight:700;
+      color:var(--muted);
     }
-    .pill.soft{
-      background: rgba(226,198,189,.30);
-      border-color: rgba(29,27,24,.12);
-      color: var(--ink);
+
+    @media(max-width:920px){
+      nav.links{display:none}
+      .ctaDesktop{display:none}
+      .menuBtn{display:inline-flex}
+    }
+    @media(min-width:921px){
+      .menuOverlay,.mobileMenu{display:none!important}
     }
 
     /* ===== Sections ===== */
     section{padding:26px 0}
+    h1{
+      font-size:38px;
+      font-weight:900;
+      line-height:1.08;
+      letter-spacing:-.03em;
+    }
     h2{
-      margin:0 0 12px;
       font-size:14px;
-      letter-spacing:.10em;
+      letter-spacing:.1em;
       text-transform:uppercase;
       color:var(--muted);
       font-weight:800;
+      margin-bottom:12px;
     }
+
+    .hero{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg,var(--surface),rgba(242,238,233,.6));
+      padding:24px;
+    }
+
+    .pill{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:14px;
+      border:1px solid var(--line2);
+      font-size:13px;
+      font-weight:800;
+      margin-right:6px;
+    }
+
     .grid{
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:14px;
     }
-    @media (max-width:900px){
-      .grid{grid-template-columns:1fr}
-    }
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+
     .card{
       border:1px solid var(--line);
       border-radius:16px;
       padding:18px;
-      background: var(--surface);
-      box-shadow: 0 10px 28px rgba(29,27,24,.05);
-    }
-    .card h3{
-      margin:0 0 8px;
-      font-size:16px;
-      font-weight:800;
-      letter-spacing:.02em;
-      color: var(--ink);
-    }
-    .card p{
-      margin:0;
-      color:var(--muted);
-      font-size:14.5px;
-      font-weight:500;
-    }
-    .card ul{
-      margin:10px 0 0;
-      padding-left:18px;
-      color:var(--muted);
-      font-size:14.5px;
-      display:grid;
-      gap:6px;
-      font-weight:500;
+      background:var(--surface);
     }
 
-    .notice{
-      margin-top:16px;
-      padding:14px;
-      border:1px dashed rgba(29,27,24,.18);
-      border-radius:14px;
-      background: rgba(233,221,204,.40);
-      color: var(--muted);
-      font-size:14px;
-      font-weight:500;
-    }
-    .notice ul{
-      margin:10px 0 0;
-      padding-left:18px;
-      display:grid;
-      gap:6px;
-    }
-
-    /* ===== Trust strip ===== */
-    .trustStrip{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:12px;
-      margin-top:14px;
-    }
-    @media (max-width:900px){ .trustStrip{grid-template-columns:1fr 1fr} }
-    @media (max-width:520px){ .trustStrip{grid-template-columns:1fr} }
-    .trustItem{
-      border:1px solid var(--line);
-      border-radius:14px;
-      background: rgba(29,27,24,.02);
-      padding:12px;
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-    }
-    .trustIcon{
-      width:34px;
-      height:34px;
-      border-radius:12px;
-      border:1px solid var(--line2);
-      background: rgba(226,198,189,.25);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:900;
-      color: var(--ink);
-      flex: 0 0 auto;
-    }
-    .trustItem b{font-weight:900}
-    .trustItem .tiny{margin-top:2px}
-
-    /* ===== Pricing blocks ===== */
-    .pricing{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px;
-    }
-    @media (max-width:900px){
-      .pricing{grid-template-columns:1fr}
-    }
-    .priceCard{
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:18px;
-      background: var(--surface);
-      box-shadow: 0 10px 28px rgba(29,27,24,.05);
-    }
-    .priceTop{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      gap:12px;
-    }
-    .tag{
-      font-size:12px;
-      color:var(--muted);
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(29,27,24,.02);
-      white-space:nowrap;
-      font-weight:650;
-    }
-    .bigPrice{
-      margin:8px 0 6px;
-      font-size:34px;
-      font-weight:900;
-      letter-spacing:-.02em;
-      color:var(--ink);
-    }
-
-    /* ===== Booking ===== */
-    .twoCol{display:grid; grid-template-columns:1fr 1fr; gap:14px}
-    @media (max-width:900px){ .twoCol{grid-template-columns:1fr} }
-
-    form{
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:18px;
-      background: var(--surface);
-      display:grid;
-      gap:12px;
-      box-shadow: 0 10px 28px rgba(29,27,24,.05);
-    }
-    label{
-      font-size:12px;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      color:var(--muted);
-      font-weight:900;
-    }
-    input, select, textarea{
-      width:100%;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(29,27,24,.16);
-      background: rgba(242,238,233,.85);
-      color: var(--ink);
-      outline:none;
-      font-size:15px;
-      font-weight:600;
-    }
-    input:focus, select:focus, textarea:focus{
-      border-color: rgba(29,27,24,.25);
-      box-shadow: 0 0 0 4px var(--focus);
-    }
-    textarea{min-height:110px; resize:vertical}
-    .formRow{display:grid; grid-template-columns:1fr 1fr; gap:12px}
-    @media (max-width:650px){ .formRow{grid-template-columns:1fr} }
-
-    /* ===== Footer ===== */
     footer{
       border-top:1px solid var(--line);
       padding:28px 0;
-      color:var(--muted);
       font-size:14px;
-      font-weight:500;
-    }
-    .footerGrid{
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:14px;
-      align-items:start;
-    }
-    @media (max-width:900px){ .footerGrid{grid-template-columns:1fr} }
-    .miniLinks{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
-    .miniLinks a{
       color:var(--muted);
-      padding:6px 8px;
-      border-radius:999px;
-      border:1px solid transparent;
-      font-size:13px;
-      font-weight:700;
-    }
-    .miniLinks a:hover{
-      border-color: var(--line);
-      color: var(--ink);
-      background: rgba(29,27,24,.03);
-    }
-
-    /* ===== Mobile header menu ===== */
-    .ctaDesktop{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      flex-wrap: nowrap;
-      justify-content:flex-end;
-    }
-    .menuBtn{ display:none; padding:10px 12px; }
-
-    .hamburger{
-      width:18px;
-      height:2px;
-      background: var(--ink);
-      display:inline-block;
-      position:relative;
-      border-radius:99px;
-    }
-    .hamburger::before,
-    .hamburger::after{
-      content:"";
-      position:absolute;
-      left:0;
-      width:18px;
-      height:2px;
-      background: var(--ink);
-      border-radius:99px;
-    }
-    .hamburger::before{ top:-6px; }
-    .hamburger::after{ top:6px; }
-
-    .menuOverlay{
-      position: fixed;
-      inset: 0;
-      background: rgba(29,27,24,.35);
-      backdrop-filter: blur(4px);
-      z-index: 50;
-    }
-
-    .mobileMenu{
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: min(84vw, 360px);
-      background: var(--bg);
-      border-left: 1px solid var(--line);
-      z-index: 60;
-      transform: translateX(102%);
-      transition: transform .18s ease;
-      padding: 18px;
-      display: grid;
-      align-content: start;
-    }
-    .mobileMenu.open{ transform: translateX(0); }
-
-    .mobileMenuTop{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-    }
-    .mobileMenuActions{ display:grid; gap:10px; }
-    .mobileMenuNav{ display:grid; gap:8px; }
-
-    .mobileMenuNav a{
-      padding:10px 12px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background: rgba(29,27,24,.02);
-      color: var(--muted);
-      font-weight:800;
-    }
-    .mobileMenuNav a:hover{
-      color: var(--ink);
-      background: rgba(29,27,24,.05);
-    }
-
-    @media (max-width: 920px){
-      .ctaDesktop{ display:none; }
-      .menuBtn{ display:inline-flex; }
-      .brand{ min-width: 0; }
-    }
-
-    @media (min-width: 921px){
-      .menuOverlay{ display:none !important; }
-      .mobileMenu{ display:none !important; }
     }
   </style>
 </head>
 
 <body>
+
 <header>
   <div class="wrap">
     <div class="nav">
-      <a class="brand" href="#top" aria-label="Light and Memory Audio Home">
-        <img class="logoImg" src="assets/lama.jpg" alt="Light and Memory Audio logo" />
+      <a class="brand" href="#top">
+        <img class="logoImg" src="assets/lama.jpeg" alt="Light and Memory Audio logo">
         <div>
           <div class="brandTitle">Light and Memory Audio</div>
           <div class="brandSub">Setups. Repairs. Pro feel.</div>
         </div>
       </a>
 
-      <nav class="links" aria-label="Site navigation">
+      <nav class="links">
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
         <a href="#booking">Booking</a>
-        <a href="#faq">FAQ</a>
       </nav>
 
       <div class="cta">
         <div class="ctaDesktop">
-          <a class="btn" id="callBtn" href="tel:+18055551234">Call</a>
-          <a class="btn" id="textBtn" href="sms:+18055551234">Text</a>
-          <a class="btn" href="https://www.instagram.com/light_and_memory_audio?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a class="btn" href="tel:+18054247735">Call</a>
+          <a class="btn" href="sms:+18054247735">Text</a>
           <a class="btn primary" href="#booking">Book</a>
         </div>
 
-        <button class="btn menuBtn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-          <span class="hamburger" aria-hidden="true"></span>
+        <button class="btn menuBtn" id="menuBtn">
+          <span class="hamburger"></span>
         </button>
       </div>
     </div>
@@ -554,612 +268,102 @@
 </header>
 
 <div class="menuOverlay" id="menuOverlay" hidden></div>
-
-<aside class="mobileMenu" id="mobileMenu" aria-hidden="true">
-  <div class="mobileMenuTop">
-    <div style="display:flex; align-items:center; gap:10px">
-      <img class="logoImg" src="assets/lama.jpg" alt="" />
-      <div>
-        <div class="brandTitle" style="font-size:13px">Light and Memory Audio</div>
-        <div class="brandSub">Setups. Repairs. Pro feel.</div>
-      </div>
-    </div>
-
-    <button class="btn" id="closeMenuBtn" type="button" aria-label="Close menu">Close</button>
-  </div>
-
+<aside class="mobileMenu" id="mobileMenu">
+  <a class="btn" href="tel:+18054247735">Call</a>
+  <a class="btn" href="sms:+18054247735">Text</a>
+  <a class="btn primary" href="#booking">Book</a>
   <div class="divider"></div>
-
-  <div class="mobileMenuActions">
-    <a class="btn" id="callBtnMobile" href="tel:+18055551234">Call</a>
-    <a class="btn" id="textBtnMobile" href="sms:+18055551234">Text</a>
-    <a class="btn" href="https://www.instagram.com/light_and_memory_audio?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
-    <a class="btn primary" href="#booking" data-close-menu>Book</a>
-  </div>
-
-  <div class="divider"></div>
-
-  <nav class="mobileMenuNav" aria-label="Mobile navigation">
-    <a href="#services" data-close-menu>Services</a>
-    <a href="#pricing" data-close-menu>Pricing</a>
-    <a href="#booking" data-close-menu>Booking</a>
-    <a href="#faq" data-close-menu>FAQ</a>
+  <nav class="mobileMenuNav">
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#booking">Booking</a>
   </nav>
-
-  <div class="divider"></div>
-
-  <p class="tiny" style="margin:0">
-    Service fee: $30 • Materials/parts not included
-  </p>
 </aside>
 
 <main id="top" class="wrap">
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" aria-label="Hero">
-    <span class="kicker"><span class="dot" aria-hidden="true"></span> Clean feel • Stable tuning • Honest work</span>
+<section class="hero">
+  <h1>Make your guitar feel right again.</h1>
+  <p class="muted">Playability-first setups and select repairs focused on tuning stability and feel.</p>
+  <span class="pill">$30 Service Fee</span>
+  <span class="pill">Parts not included</span>
+</section>
 
-    <h1>Make your guitar feel right again.</h1>
+<section id="services">
+  <h2>Services</h2>
+  <div class="grid">
+    <div class="card">
+      <strong>Setups</strong>
+      <p class="small">Relief, action, intonation, inspection</p>
+    </div>
+    <div class="card">
+      <strong>Select repairs</strong>
+      <p class="small">Electronics, jacks, pots, pickup swaps</p>
+    </div>
+    <div class="card">
+      <strong>Not sure?</strong>
+      <p class="small">Describe the issue and I’ll confirm scope</p>
+    </div>
+  </div>
+</section>
 
-    <p>
-      Playability-first setups and select repairs for musicians who care about
-      tuning stability, feel, and reliability.
+<section id="pricing">
+  <h2>Pricing</h2>
+  <div class="card">
+    <strong>$30 Service Fee</strong>
+    <p class="small">Labor for setups and in-scope work. Parts approved separately.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Why it’s a better value</h2>
+  <div class="card">
+    <ul class="small">
+      <li>Low overhead, appointment-based shop</li>
+      <li>No upsells or surprise charges</li>
+      <li>Customer-approved parts only</li>
+      <li>Play-tested before pickup</li>
+    </ul>
+  </div>
+</section>
+
+<section id="booking">
+  <h2>Booking</h2>
+  <div class="card">
+    <p class="small">
+      Text or call to book.  
+      <br><strong>Payment:</strong> Cash or Zelle only.
     </p>
-
-    <div class="pillRow" aria-label="Pricing highlights">
-      <div class="pill soft">Service Fee: $30</div>
-      <div class="pill">Materials / parts not included</div>
-    </div>
-
-    <div class="cta" style="justify-content:flex-start; margin-top:4px">
-      <a class="btn primary" href="#booking">Book an appointment</a>
-      <a class="btn" href="#pricing">See pricing</a>
-      <a class="btn" id="textBookBtn" href="sms:+18055551234">Text to book</a>
-    </div>
-
-    <div class="trustStrip" aria-label="Trust highlights">
-      <div class="trustItem">
-        <div class="trustIcon">✓</div>
-        <div>
-          <b>Play-tested</b>
-          <div class="tiny">Checked for tuning + feel before pickup</div>
-        </div>
-      </div>
-      <div class="trustItem">
-        <div class="trustIcon">$</div>
-        <div>
-          <b>Transparent</b>
-          <div class="tiny">You approve parts costs before purchase</div>
-        </div>
-      </div>
-      <div class="trustItem">
-        <div class="trustIcon">↺</div>
-        <div>
-          <b>Setup-first</b>
-          <div class="tiny">Relief, action, intonation—done right</div>
-        </div>
-      </div>
-      <div class="trustItem">
-        <div class="trustIcon">💬</div>
-        <div>
-          <b>Fast comms</b>
-          <div class="tiny">Text updates for questions + scope</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <p class="small" style="margin:0">
-      <strong class="muted">Service area:</strong>
-      <span id="locationText">Simi Valley / Moorpark / Northridge / Thousand Oaks / Santa Clarita / Porter Ranch</span>
-      &nbsp;•&nbsp;
-      <strong class="muted">Hours:</strong>
-      <span id="hoursText">By appointment</span>
-    </p>
-  </section>
-
-  <!-- ===== SERVICES ===== -->
-  <section id="services" aria-label="Services">
-    <h2>Services</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Setups</h3>
-        <p>Comfort + clarity for live players and daily practice.</p>
-        <ul>
-          <li>Neck relief adjustment</li>
-          <li>Action / saddle height</li>
-          <li>Intonation</li>
-          <li>Basic cleaning + inspection</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Select repairs</h3>
-        <p>Common issues fixed cleanly and reliably (within scope).</p>
-        <ul>
-          <li>Electronics troubleshooting</li>
-          <li>Output jack / pot / switch</li>
-          <li>Pickup swaps (standard installs)</li>
-          <li>Hardware fixes</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Not sure?</h3>
-        <p>Describe the issue and I’ll tell you if it’s in scope.</p>
-        <ul>
-          <li>Tuning instability</li>
-          <li>Buzzing / dead notes</li>
-          <li>Bridge / trem issues</li>
-          <li>String gauge changes</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="notice">
-      <strong style="color:var(--ink); font-weight:900;">Current limitations:</strong><br>
-      I’m limited to certain repairs and setups due to available tools, supplies, and hardware. This will expand as I continue investing in my shop.<br><br>
-      <strong style="color:var(--ink); font-weight:900;">Not currently offered:</strong>
-      <ul>
-        <li>Fret repair / fretwork</li>
-        <li>Structural repairs (neck breaks, cracks, major body damage)</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===== PRICING ===== -->
-  <section id="pricing" aria-label="Pricing">
-    <h2>Pricing</h2>
-
-    <div class="pricing">
-      <div class="priceCard">
-        <div class="priceTop">
-          <div>
-            <div class="muted" style="letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:900;">Service fee</div>
-            <div class="bigPrice">$30</div>
-            <div class="small">Standard setups + in-scope repair labor (confirmed before starting).</div>
-          </div>
-          <div class="tag">Upfront</div>
-        </div>
-
-        <div class="divider"></div>
-
-        <ul style="margin:0; padding-left:18px; color:var(--muted); display:grid; gap:6px; font-weight:600;">
-          <li>Relief, action, intonation</li>
-          <li>Basic troubleshooting + fixes</li>
-          <li>Electronics/hardware labor (within scope)</li>
-        </ul>
-
-        <p class="small" style="margin-top:12px">
-          <strong style="color:var(--ink); font-weight:900;">Materials/parts not included.</strong> You approve any parts cost before purchase.
-        </p>
-      </div>
-
-      <div class="priceCard">
-        <div class="priceTop">
-          <div>
-            <div class="muted" style="letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:900;">Parts &amp; materials</div>
-            <div class="bigPrice">Not included</div>
-            <div class="small">Strings, pickups, pots, switches, jacks, hardware, etc. billed separately.</div>
-          </div>
-          <div class="tag">Approved first</div>
-        </div>
-
-        <div class="divider"></div>
-
-        <ul style="margin:0; padding-left:18px; color:var(--muted); display:grid; gap:6px; font-weight:600;">
-          <li>Strings / consumables</li>
-          <li>Electronics parts</li>
-          <li>Hardware replacements</li>
-        </ul>
-
-        <p class="small" style="margin-top:12px">
-          Customer-supplied parts are fine — compatibility confirmed before install.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== VALUE ===== -->
-  <section id="value" aria-label="Why it's a better value">
-    <h2>Why it’s a better value</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Simple pricing</h3>
-        <p>$30 service fee for standard setups and in-scope labor — no surprise add-ons.</p>
-      </div>
-      <div class="card">
-        <h3>No upsells</h3>
-        <p>I’ll recommend what your instrument actually needs, not what’s easiest to sell.</p>
-      </div>
-      <div class="card">
-        <h3>Quality checks</h3>
-        <p>Work is play-tested for stable tuning and feel before pickup.</p>
-      </div>
-    </div>
-
-    <div class="notice">
-      <strong style="color:var(--ink); font-weight:900;">Parts policy:</strong> You approve parts costs before purchase. Customer-supplied parts are welcome (compatibility confirmed first).
-    </div>
-  </section>
-
-  <!-- ===== BOOKING ===== -->
-  <section id="booking" aria-label="Booking">
-    <h2>Booking</h2>
-
-    <div class="card" style="margin-bottom:14px">
-      <h3>Before you book</h3>
-      <ul style="margin:0; padding-left:18px; color:var(--muted); display:grid; gap:6px; font-weight:600;">
-        <li>Best results with the strings and tuning you’ll actually use.</li>
-        <li>If you don’t know your gauge/tuning, that’s okay — mention it in details.</li>
-        <li>Service fee is $30 (parts/strings billed separately and approved first).</li>
-        <li>Not currently offered: fretwork and structural repairs.</li>
-      </ul>
-
-      <div class="cta" style="justify-content:flex-start; margin-top:12px">
-        <a class="btn" id="textBookBtn2" href="sms:+18055551234">Text to book</a>
-        <a class="btn primary" href="#bookingForm">Use booking form</a>
-      </div>
-    </div>
-
-    <div class="twoCol">
-      <form id="bookingForm">
-        <div class="formRow">
-          <div>
-            <label for="name">Name</label>
-            <input id="name" name="name" placeholder="Your name" autocomplete="name" required />
-          </div>
-          <div>
-            <label for="phone">Phone</label>
-            <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(805) 555-5555" autocomplete="tel" required />
-          </div>
-        </div>
-
-        <div class="formRow">
-          <div>
-            <label for="instrument">Instrument</label>
-            <select id="instrument" name="instrument" required>
-              <option value="" selected disabled>Select one</option>
-              <option>Electric Guitar</option>
-              <option>Acoustic Guitar</option>
-              <option>Bass</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div>
-            <label for="service">Service</label>
-            <select id="service" name="service" required>
-              <option value="" selected disabled>Select one</option>
-              <option value="Service Fee ($30) — Setup">Service Fee ($30) — Setup</option>
-              <option value="Service Fee ($30) — Repair / Install">Service Fee ($30) — Repair / Install</option>
-              <option value="Not sure — help me decide">Not sure — help me decide</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="formRow">
-          <div>
-            <label for="timing">Preferred timing</label>
-            <select id="timing" name="timing" required>
-              <option value="" selected disabled>Select one</option>
-              <option>ASAP</option>
-              <option>This week</option>
-              <option>Next week</option>
-              <option>Flexible</option>
-            </select>
-          </div>
-          <div>
-            <label for="location">Drop-off area</label>
-            <select id="location" name="location" required>
-              <option value="" selected disabled>Select one</option>
-              <option>Simi Valley</option>
-              <option>Moorpark</option>
-              <option>Northridge</option>
-              <option>Thousand Oaks</option>
-              <option>Santa Clarita</option>
-              <option>Porter Ranch</option>
-              <option>Other (describe below)</option>
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label for="details">Details</label>
-          <textarea id="details" name="details" placeholder="What’s happening? Include tuning + string gauge if you know it." required></textarea>
-        </div>
-
-        <div class="notice" id="formNotice" style="margin-top:0">
-          Service fee: <strong style="color:var(--ink); font-weight:900;">$30</strong> (materials/parts not included).<br>
-          Not offered currently: fretwork and structural repairs.
-        </div>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center">
-          <button class="btn primary" type="submit">Send booking email</button>
-          <button class="btn" type="button" id="copyBtn">Copy message</button>
-        </div>
-
-        <div id="fallbackWrap" style="display:none; margin-top:10px">
-          <label for="fallbackText">Copy/paste this message</label>
-          <textarea id="fallbackText" readonly></textarea>
-        </div>
-
-        <p class="tiny" style="margin:0">
-          This form opens your email app (no data stored on the website).
-        </p>
-      </form>
-
-      <div class="card">
-        <h3>Contact</h3>
-        <p class="muted" style="margin:0 0 12px">Text is the fastest way to book.</p>
-
-        <div class="notice" style="margin-top:0">
-          <div><strong style="color:var(--ink); font-weight:900;">Email:</strong> <span id="emailText">youremail@example.com</span></div>
-          <div style="margin-top:8px"><strong style="color:var(--ink); font-weight:900;">Phone:</strong> <span id="phoneText">(805) 555-1234</span></div>
-          <div style="margin-top:8px">
-            <strong style="color:var(--ink); font-weight:900;">Instagram:</strong>
-            <a href="https://www.instagram.com/light_and_memory_audio?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr"
-               target="_blank" rel="noopener noreferrer"
-               style="text-decoration:underline; text-underline-offset:3px;">
-              @light_and_memory_audio
-            </a>
-          </div>
-          <div style="margin-top:8px">
-            <strong style="color:var(--ink); font-weight:900;">Service area:</strong>
-            <span id="areaText">Simi Valley / Moorpark / Northridge / Thousand Oaks / Santa Clarita / Porter Ranch</span>
-          </div>
-          <div style="margin-top:8px">
-            <strong style="color:var(--ink); font-weight:900;">Payments:</strong>
-            <span>Cash / Zelle</span>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <h3 style="margin-top:0">What to bring</h3>
-        <ul style="margin:0; padding-left:18px; color:var(--muted); display:grid; gap:6px; font-weight:600;">
-          <li>Your guitar + case/bag</li>
-          <li>Preferred strings (or ask me to supply)</li>
-          <li>Notes on tuning + gauge</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FAQ ===== -->
-  <section id="faq" aria-label="FAQ">
-    <h2>FAQ</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Do you work on acoustics?</h3>
-        <p>Yes — acoustics, electrics, and bass. If it’s unusual, tell me what it is and I’ll confirm.</p>
-      </div>
-      <div class="card">
-        <h3>Do I need new strings for a setup?</h3>
-        <p>Highly recommended. Setups are best with the strings you’ll actually play.</p>
-      </div>
-      <div class="card">
-        <h3>Do you do fretwork or structural repairs?</h3>
-        <p>Not currently — limited by tools/supplies for now. This will expand as the shop grows.</p>
-      </div>
-
-      <div class="card">
-        <h3>What if I don’t know my string gauge?</h3>
-        <p>No problem. Tell me what you normally play and we’ll figure it out.</p>
-      </div>
-      <div class="card">
-        <h3>What tunings do you set up for?</h3>
-        <p>Standard and most common alternate tunings. Include your tuning in the booking details.</p>
-      </div>
-      <div class="card">
-        <h3>How does drop-off work?</h3>
-        <p>By appointment. We’ll confirm location and a simple handoff plan by text.</p>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="footerGrid">
-      <div style="display:flex; gap:10px; align-items:center">
-        <img class="logoImg" src="assets/lama.jpg" alt="Light and Memory Audio logo" />
-        <div>
-          <div style="font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:var(--ink);">Light and Memory Audio</div>
-          <div class="tiny">Service fee: $30 • Materials/parts not included • By appointment</div>
-          <div class="tiny" style="margin-top:6px">Payments: Cash / Zelle</div>
-        </div>
-      </div>
-
-      <div class="miniLinks">
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#booking">Booking</a>
-        <a href="#faq">FAQ</a>
-        <a href="https://www.instagram.com/light_and_memory_audio?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="#top">Top</a>
-      </div>
-    </div>
-
-    <div class="tiny" style="margin-top:16px">
-      © <span id="year"></span> Light and Memory Audio — <span id="areaText2">Simi Valley / Moorpark / Northridge / Thousand Oaks / Santa Clarita / Porter Ranch</span>
-    </div>
+    <strong>Light and Memory Audio</strong><br>
+    Simi Valley & surrounding areas<br>
+    Cash • Zelle • By appointment
   </div>
 </footer>
 
 <script>
-  // ========= UPDATE THESE =========
-  const BUSINESS_EMAIL = "lightandmemoryaudio26@gmail.com";
-  const BUSINESS_PHONE = "+18054247735";
-  const SERVICE_AREA   = "Simi Valley / Moorpark / Northridge / Thousand Oaks / Santa Clarita / Porter Ranch";
-  const HOURS_TEXT     = "By appointment";
-
-  // Footer/hero text sync
-  document.getElementById("year").textContent = new Date().getFullYear();
-  document.getElementById("emailText").textContent = BUSINESS_EMAIL;
-  document.getElementById("phoneText").textContent = formatPhoneForDisplay(BUSINESS_PHONE) || BUSINESS_PHONE;
-  document.getElementById("areaText").textContent = SERVICE_AREA;
-  document.getElementById("areaText2").textContent = SERVICE_AREA;
-  document.getElementById("locationText").textContent = SERVICE_AREA;
-  document.getElementById("hoursText").textContent = HOURS_TEXT;
-
-  // Header buttons
-  document.getElementById("callBtn").href = `tel:${BUSINESS_PHONE}`;
-  document.getElementById("textBtn").href = `sms:${BUSINESS_PHONE}`;
-
-  // Text-to-book (prefilled)
-  const prefill = encodeURIComponent(
-    "Hey! I’d like to book a setup/repair.\n\nGuitar/Bass:\nString gauge:\nTuning:\nIssue:\nPreferred timing:"
-  );
-  const smsHref = `sms:${BUSINESS_PHONE}?&body=${prefill}`;
-  const textBookBtn = document.getElementById("textBookBtn");
-  const textBookBtn2 = document.getElementById("textBookBtn2");
-  if(textBookBtn) textBookBtn.href = smsHref;
-  if(textBookBtn2) textBookBtn2.href = smsHref;
-
-  // ===== Mobile menu wiring (safe) =====
   const menuBtn = document.getElementById("menuBtn");
-  const closeMenuBtn = document.getElementById("closeMenuBtn");
   const mobileMenu = document.getElementById("mobileMenu");
-  const menuOverlay = document.getElementById("menuOverlay");
+  const overlay = document.getElementById("menuOverlay");
 
-  if(menuBtn && closeMenuBtn && mobileMenu && menuOverlay){
-    const callBtnMobile = document.getElementById("callBtnMobile");
-    const textBtnMobile = document.getElementById("textBtnMobile");
-    if(callBtnMobile) callBtnMobile.href = `tel:${BUSINESS_PHONE}`;
-    if(textBtnMobile) textBtnMobile.href = smsHref;
-
-    function openMenu(){
+  if(menuBtn){
+    menuBtn.onclick = () => {
       mobileMenu.classList.add("open");
-      mobileMenu.setAttribute("aria-hidden", "false");
-      menuOverlay.hidden = false;
-      menuBtn.setAttribute("aria-expanded", "true");
+      overlay.hidden = false;
       document.body.style.overflow = "hidden";
-    }
-    function closeMenu(){
+    };
+    overlay.onclick = () => {
       mobileMenu.classList.remove("open");
-      mobileMenu.setAttribute("aria-hidden", "true");
-      menuOverlay.hidden = true;
-      menuBtn.setAttribute("aria-expanded", "false");
+      overlay.hidden = true;
       document.body.style.overflow = "";
-    }
-
-    menuBtn.addEventListener("click", openMenu);
-    closeMenuBtn.addEventListener("click", closeMenu);
-    menuOverlay.addEventListener("click", closeMenu);
-
-    document.addEventListener("keydown", (e) => {
-      if(e.key === "Escape") closeMenu();
-    });
-
-    mobileMenu.querySelectorAll("[data-close-menu]").forEach((el) => {
-      el.addEventListener("click", closeMenu);
-    });
-  }
-
-  // ===== Booking form =====
-  const form = document.getElementById("bookingForm");
-  const notice = document.getElementById("formNotice");
-  const copyBtn = document.getElementById("copyBtn");
-  const fallbackWrap = document.getElementById("fallbackWrap");
-  const fallbackText = document.getElementById("fallbackText");
-
-  function buildMessage(data){
-    const subject = `Booking Request — ${data.service} — ${data.name}`;
-    const body =
-`Booking Request (Light and Memory Audio)
-
-Name: ${data.name}
-Phone: ${data.phone}
-Instrument: ${data.instrument}
-Service: ${data.service}
-Preferred timing: ${data.timing}
-Drop-off area: ${data.location}
-
-Details:
-${data.details}
-
-Notes:
-- Service fee: $30
-- Materials/parts not included (approved before purchase)
-- Not currently offered: fret repair/fretwork, structural repairs
-
-— Sent from the website`;
-    return { subject, body };
-  }
-
-  function getFormData(){
-    return {
-      name: form.name.value.trim(),
-      phone: form.phone.value.trim(),
-      instrument: form.instrument.value,
-      service: form.service.value,
-      timing: form.timing.value,
-      location: form.location.value,
-      details: form.details.value.trim()
     };
   }
-
-  function validate(data){
-    if(!data.name || data.name.length < 2) return "Please enter your name.";
-    if(!data.phone || data.phone.length < 7) return "Please enter a valid phone number.";
-    if(!data.instrument) return "Please choose an instrument.";
-    if(!data.service) return "Please choose a service.";
-    if(!data.timing) return "Please choose preferred timing.";
-    if(!data.location) return "Please choose a drop-off area.";
-    if(!data.details || data.details.length < 10) return "Please add a bit more detail about the issue.";
-    return null;
-  }
-
-  function setNotice(text, ok=false){
-    notice.textContent = text;
-    notice.style.borderStyle = ok ? "solid" : "dashed";
-    notice.style.borderColor = ok ? "rgba(29,27,24,.20)" : "rgba(29,27,24,.18)";
-    notice.style.background = ok ? "rgba(226,198,189,.35)" : "rgba(233,221,204,.40)";
-    notice.style.color = ok ? "var(--ink)" : "var(--muted)";
-  }
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const data = getFormData();
-    const err = validate(data);
-    if(err){ setNotice(err, false); return; }
-
-    const msg = buildMessage(data);
-
-    fallbackWrap.style.display = "block";
-    fallbackText.value = `Subject: ${msg.subject}\n\n${msg.body}`;
-
-    const mailto = `mailto:${encodeURIComponent(BUSINESS_EMAIL)}?subject=${encodeURIComponent(msg.subject)}&body=${encodeURIComponent(msg.body)}`;
-    setNotice("Opening your email app… If it doesn’t open, copy/paste the message below.", true);
-    window.location.href = mailto;
-  });
-
-  copyBtn.addEventListener("click", async () => {
-    const data = getFormData();
-    const err = validate(data);
-    if(err){ setNotice(err, false); return; }
-
-    const msg = buildMessage(data);
-    try{
-      await navigator.clipboard.writeText(`Subject: ${msg.subject}\n\n${msg.body}`);
-      setNotice("Copied. Paste into a text or email and send it over.", true);
-    }catch{
-      setNotice("Couldn’t copy automatically on this device. Copy manually from the message box below.", false);
-      fallbackWrap.style.display = "block";
-      fallbackText.value = `Subject: ${msg.subject}\n\n${msg.body}`;
-    }
-  });
-
-  function formatPhoneForDisplay(e164){
-    const m = (e164 || "").match(/^\+1(\d{10})$/);
-    if(!m) return "";
-    const d = m[1];
-    return `(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}`;
-  }
 </script>
+
 </body>
