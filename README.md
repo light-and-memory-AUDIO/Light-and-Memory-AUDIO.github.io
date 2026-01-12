@@ -21,7 +21,6 @@
       --line2:rgba(29,27,24,.16);
       --radius:18px;
       --max:980px;
-      --focus:rgba(29,27,24,.10);
     }
 
     *{box-sizing:border-box}
@@ -32,15 +31,11 @@
       color:var(--ink);
       font-size:16.5px;
       line-height:1.65;
-      letter-spacing:.015em;
     }
 
-    a{color:inherit;text-decoration:none}
-    img{display:block}
+    a{text-decoration:none;color:inherit}
     .wrap{max-width:var(--max);margin:0 auto;padding:26px 20px}
     .divider{height:1px;background:var(--line);margin:18px 0}
-    .muted{color:var(--muted)}
-    .tiny{font-size:13px;color:var(--muted)}
     .small{font-size:14px;color:var(--muted)}
 
     /* ===== Header ===== */
@@ -284,7 +279,7 @@
 
 <section class="hero">
   <h1>Make your guitar feel right again.</h1>
-  <p class="muted">Playability-first setups and select repairs focused on tuning stability and feel.</p>
+  <p class="small">Playability-first setups and select repairs focused on tuning stability and feel.</p>
   <span class="pill">$30 Service Fee</span>
   <span class="pill">Parts not included</span>
 </section>
@@ -331,8 +326,8 @@
   <h2>Booking</h2>
   <div class="card">
     <p class="small">
-      Text or call to book.  
-      <br><strong>Payment:</strong> Cash or Zelle only.
+      Call or text to book.  
+      <br><strong>Payment accepted:</strong> Cash or Zelle only.
     </p>
   </div>
 </section>
@@ -365,5 +360,3 @@
     };
   }
 </script>
-
-</body>
