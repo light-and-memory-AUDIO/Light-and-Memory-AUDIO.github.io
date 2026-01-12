@@ -912,7 +912,7 @@
           </div>
           <div style="margin-top:8px">
             <strong style="color:var(--ink); font-weight:900;">Payments:</strong>
-            <span>Cash / Venmo / Zelle</span>
+            <span>Cash / Zelle</span>
           </div>
         </div>
 
@@ -971,7 +971,7 @@
         <div>
           <div style="font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:var(--ink);">Light and Memory Audio</div>
           <div class="tiny">Service fee: $30 • Materials/parts not included • By appointment</div>
-          <div class="tiny" style="margin-top:6px">Payments: Cash / Venmo / Zelle</div>
+          <div class="tiny" style="margin-top:6px">Payments: Cash / Zelle</div>
         </div>
       </div>
 
