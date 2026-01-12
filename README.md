@@ -4,10 +4,16 @@
   <title>Light and Memory Audio</title>
   <meta name="description" content="Light and Memory Audio — Service fee $30 (materials/parts not included). Serving Simi Valley, Moorpark, Northridge, Thousand Oaks, Santa Clarita, Porter Ranch." />
 
+  <!-- Social preview -->
   <meta property="og:title" content="Light and Memory Audio" />
   <meta property="og:description" content="Service fee $30 (materials/parts not included). Setups & select repairs." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/preview.jpg" />
+
+  <!-- Favicons (optional files in /assets) -->
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#F2EEE9" />
 
   <style>
     :root{
@@ -19,18 +25,16 @@
       --line: rgba(29,27,24,.10);
       --line2: rgba(29,27,24,.16);
 
-      --almond: #C9BBAA;
-      --timberwolf: #D8D3CB;
       --linen: #E9DDCC;
       --paledogwood: #E2C6BD;
 
       --radius: 18px;
       --max: 980px;
       --focus: rgba(29,27,24,.10);
+      --shadow: 0 14px 38px rgba(29,27,24,.07);
     }
 
     *{box-sizing:border-box}
-
     html{background:var(--bg)}
     body{
       margin:0;
@@ -48,7 +52,6 @@
     @media (max-width:600px){ .wrap{padding:22px 16px} }
 
     p, li{font-weight:500}
-
     .muted{color:var(--muted); font-weight:500}
     .tiny{font-size:13px; font-weight:500; color:var(--muted)}
     .small{font-size:14px; font-weight:500; color:var(--muted)}
@@ -161,6 +164,7 @@
       border-radius: var(--radius);
       background: linear-gradient(180deg, var(--surface), rgba(242,238,233,.55));
       padding:24px;
+      box-shadow: var(--shadow);
     }
     .kicker{
       display:inline-flex;
@@ -238,11 +242,12 @@
       border-radius:16px;
       padding:18px;
       background: var(--surface);
+      box-shadow: 0 10px 28px rgba(29,27,24,.05);
     }
     .card h3{
       margin:0 0 8px;
       font-size:16px;
-      font-weight:700;
+      font-weight:800;
       letter-spacing:.02em;
       color: var(--ink);
     }
@@ -272,6 +277,46 @@
       font-size:14px;
       font-weight:500;
     }
+    .notice ul{
+      margin:10px 0 0;
+      padding-left:18px;
+      display:grid;
+      gap:6px;
+    }
+
+    /* ===== Trust strip ===== */
+    .trustStrip{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+      margin-top:14px;
+    }
+    @media (max-width:900px){ .trustStrip{grid-template-columns:1fr 1fr} }
+    @media (max-width:520px){ .trustStrip{grid-template-columns:1fr} }
+    .trustItem{
+      border:1px solid var(--line);
+      border-radius:14px;
+      background: rgba(29,27,24,.02);
+      padding:12px;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+    .trustIcon{
+      width:34px;
+      height:34px;
+      border-radius:12px;
+      border:1px solid var(--line2);
+      background: rgba(226,198,189,.25);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      color: var(--ink);
+      flex: 0 0 auto;
+    }
+    .trustItem b{font-weight:900}
+    .trustItem .tiny{margin-top:2px}
 
     /* ===== Pricing blocks ===== */
     .pricing{
@@ -287,6 +332,7 @@
       border-radius:16px;
       padding:18px;
       background: var(--surface);
+      box-shadow: 0 10px 28px rgba(29,27,24,.05);
     }
     .priceTop{
       display:flex;
@@ -323,13 +369,14 @@
       background: var(--surface);
       display:grid;
       gap:12px;
+      box-shadow: 0 10px 28px rgba(29,27,24,.05);
     }
     label{
       font-size:12px;
       letter-spacing:.08em;
       text-transform:uppercase;
       color:var(--muted);
-      font-weight:800;
+      font-weight:900;
     }
     input, select, textarea{
       width:100%;
@@ -340,7 +387,7 @@
       color: var(--ink);
       outline:none;
       font-size:15px;
-      font-weight:500;
+      font-weight:600;
     }
     input:focus, select:focus, textarea:focus{
       border-color: rgba(29,27,24,.25);
@@ -372,7 +419,7 @@
       border-radius:999px;
       border:1px solid transparent;
       font-size:13px;
-      font-weight:650;
+      font-weight:700;
     }
     .miniLinks a:hover{
       border-color: var(--line);
@@ -385,7 +432,7 @@
       display:flex;
       gap:10px;
       align-items:center;
-      flex-wrap: nowrap; /* keep one row on desktop */
+      flex-wrap: nowrap;
       justify-content:flex-end;
     }
     .menuBtn{ display:none; padding:10px 12px; }
@@ -451,21 +498,19 @@
       border:1px solid var(--line);
       background: rgba(29,27,24,.02);
       color: var(--muted);
-      font-weight:700;
+      font-weight:800;
     }
     .mobileMenuNav a:hover{
       color: var(--ink);
       background: rgba(29,27,24,.05);
     }
 
-    /* Switch to hamburger on <= 920px */
     @media (max-width: 920px){
       .ctaDesktop{ display:none; }
       .menuBtn{ display:inline-flex; }
       .brand{ min-width: 0; }
     }
 
-    /* Desktop safety: never show mobile menu/overlay */
     @media (min-width: 921px){
       .menuOverlay{ display:none !important; }
       .mobileMenu{ display:none !important; }
@@ -478,7 +523,7 @@
   <div class="wrap">
     <div class="nav">
       <a class="brand" href="#top" aria-label="Light and Memory Audio Home">
-        <img class="logoImg" src="lama.jpg" alt="Light and Memory Audio logo" />
+        <img class="logoImg" src="assets/lama.jpg" alt="Light and Memory Audio logo" />
         <div>
           <div class="brandTitle">Light and Memory Audio</div>
           <div class="brandSub">Setups. Repairs. Pro feel.</div>
@@ -550,6 +595,7 @@
 
 <main id="top" class="wrap">
 
+  <!-- ===== HERO ===== -->
   <section class="hero" aria-label="Hero">
     <span class="kicker"><span class="dot" aria-hidden="true"></span> Clean feel • Stable tuning • Honest work</span>
 
@@ -568,6 +614,38 @@
     <div class="cta" style="justify-content:flex-start; margin-top:4px">
       <a class="btn primary" href="#booking">Book an appointment</a>
       <a class="btn" href="#pricing">See pricing</a>
+      <a class="btn" id="textBookBtn" href="sms:+18055551234">Text to book</a>
+    </div>
+
+    <div class="trustStrip" aria-label="Trust highlights">
+      <div class="trustItem">
+        <div class="trustIcon">✓</div>
+        <div>
+          <b>Play-tested</b>
+          <div class="tiny">Checked for tuning + feel before pickup</div>
+        </div>
+      </div>
+      <div class="trustItem">
+        <div class="trustIcon">$</div>
+        <div>
+          <b>Transparent</b>
+          <div class="tiny">You approve parts costs before purchase</div>
+        </div>
+      </div>
+      <div class="trustItem">
+        <div class="trustIcon">↺</div>
+        <div>
+          <b>Setup-first</b>
+          <div class="tiny">Relief, action, intonation—done right</div>
+        </div>
+      </div>
+      <div class="trustItem">
+        <div class="trustIcon">💬</div>
+        <div>
+          <b>Fast comms</b>
+          <div class="tiny">Text updates for questions + scope</div>
+        </div>
+      </div>
     </div>
 
     <div class="divider"></div>
@@ -581,6 +659,7 @@
     </p>
   </section>
 
+  <!-- ===== SERVICES ===== -->
   <section id="services" aria-label="Services">
     <h2>Services</h2>
 
@@ -620,16 +699,17 @@
     </div>
 
     <div class="notice">
-      <strong style="color:var(--ink); font-weight:800;">Current limitations:</strong><br>
+      <strong style="color:var(--ink); font-weight:900;">Current limitations:</strong><br>
       I’m limited to certain repairs and setups due to available tools, supplies, and hardware. This will expand as I continue investing in my shop.<br><br>
-      <strong style="color:var(--ink); font-weight:800;">Not currently offered:</strong>
-      <ul style="margin:10px 0 0; padding-left:18px;">
+      <strong style="color:var(--ink); font-weight:900;">Not currently offered:</strong>
+      <ul>
         <li>Fret repair / fretwork</li>
         <li>Structural repairs (neck breaks, cracks, major body damage)</li>
       </ul>
     </div>
   </section>
 
+  <!-- ===== PRICING ===== -->
   <section id="pricing" aria-label="Pricing">
     <h2>Pricing</h2>
 
@@ -637,30 +717,30 @@
       <div class="priceCard">
         <div class="priceTop">
           <div>
-            <div class="muted" style="letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:800;">Service fee</div>
+            <div class="muted" style="letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:900;">Service fee</div>
             <div class="bigPrice">$30</div>
-            <div class="small">Labor/service for setups and in-scope repair work (confirmed before starting).</div>
+            <div class="small">Standard setups + in-scope repair labor (confirmed before starting).</div>
           </div>
           <div class="tag">Upfront</div>
         </div>
 
         <div class="divider"></div>
 
-        <ul style="margin:0; padding-left:18px; color:var(--muted); display:grid; gap:6px;">
+        <ul style="margin:0; padding-left:18px; color:var(--muted); display:grid; gap:6px; font-weight:600;">
           <li>Relief, action, intonation</li>
           <li>Basic troubleshooting + fixes</li>
           <li>Electronics/hardware labor (within scope)</li>
         </ul>
 
         <p class="small" style="margin-top:12px">
-          <strong style="color:var(--ink); font-weight:800;">Materials/parts not included.</strong> You approve any parts cost before purchase.
+          <strong style="color:var(--ink); font-weight:900;">Materials/parts not included.</strong> You approve any parts cost before purchase.
         </p>
       </div>
 
       <div class="priceCard">
         <div class="priceTop">
           <div>
-            <div class="muted" style="letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:800;">Parts &amp; materials</div>
+            <div class="muted" style="letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:900;">Parts &amp; materials</div>
             <div class="bigPrice">Not included</div>
             <div class="small">Strings, pickups, pots, switches, jacks, hardware, etc. billed separately.</div>
           </div>
@@ -669,7 +749,7 @@
 
         <div class="divider"></div>
 
-        <ul style="margin:0; padding-left:18px; color:var(--muted); display:grid; gap:6px;">
+        <ul style="margin:0; padding-left:18px; color:var(--muted); display:grid; gap:6px; font-weight:600;">
           <li>Strings / consumables</li>
           <li>Electronics parts</li>
           <li>Hardware replacements</li>
@@ -682,8 +762,48 @@
     </div>
   </section>
 
+  <!-- ===== VALUE ===== -->
+  <section id="value" aria-label="Why it's a better value">
+    <h2>Why it’s a better value</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Simple pricing</h3>
+        <p>$30 service fee for standard setups and in-scope labor — no surprise add-ons.</p>
+      </div>
+      <div class="card">
+        <h3>No upsells</h3>
+        <p>I’ll recommend what your instrument actually needs, not what’s easiest to sell.</p>
+      </div>
+      <div class="card">
+        <h3>Quality checks</h3>
+        <p>Work is play-tested for stable tuning and feel before pickup.</p>
+      </div>
+    </div>
+
+    <div class="notice">
+      <strong style="color:var(--ink); font-weight:900;">Parts policy:</strong> You approve parts costs before purchase. Customer-supplied parts are welcome (compatibility confirmed first).
+    </div>
+  </section>
+
+  <!-- ===== BOOKING ===== -->
   <section id="booking" aria-label="Booking">
     <h2>Booking</h2>
+
+    <div class="card" style="margin-bottom:14px">
+      <h3>Before you book</h3>
+      <ul style="margin:0; padding-left:18px; color:var(--muted); display:grid; gap:6px; font-weight:600;">
+        <li>Best results with the strings and tuning you’ll actually use.</li>
+        <li>If you don’t know your gauge/tuning, that’s okay — mention it in details.</li>
+        <li>Service fee is $30 (parts/strings billed separately and approved first).</li>
+        <li>Not currently offered: fretwork and structural repairs.</li>
+      </ul>
+
+      <div class="cta" style="justify-content:flex-start; margin-top:12px">
+        <a class="btn" id="textBookBtn2" href="sms:+18055551234">Text to book</a>
+        <a class="btn primary" href="#bookingForm">Use booking form</a>
+      </div>
+    </div>
 
     <div class="twoCol">
       <form id="bookingForm">
@@ -752,7 +872,7 @@
         </div>
 
         <div class="notice" id="formNotice" style="margin-top:0">
-          Service fee: <strong style="color:var(--ink); font-weight:800;">$30</strong> (materials/parts not included).<br>
+          Service fee: <strong style="color:var(--ink); font-weight:900;">$30</strong> (materials/parts not included).<br>
           Not offered currently: fretwork and structural repairs.
         </div>
 
@@ -773,13 +893,13 @@
 
       <div class="card">
         <h3>Contact</h3>
-        <p class="muted" style="margin:0 0 12px">Update your email/phone in the script near the bottom.</p>
+        <p class="muted" style="margin:0 0 12px">Text is the fastest way to book.</p>
 
         <div class="notice" style="margin-top:0">
-          <div><strong style="color:var(--ink); font-weight:800;">Email:</strong> <span id="emailText">youremail@example.com</span></div>
-          <div style="margin-top:8px"><strong style="color:var(--ink); font-weight:800;">Phone:</strong> <span id="phoneText">(805) 555-1234</span></div>
+          <div><strong style="color:var(--ink); font-weight:900;">Email:</strong> <span id="emailText">youremail@example.com</span></div>
+          <div style="margin-top:8px"><strong style="color:var(--ink); font-weight:900;">Phone:</strong> <span id="phoneText">(805) 555-1234</span></div>
           <div style="margin-top:8px">
-            <strong style="color:var(--ink); font-weight:800;">Instagram:</strong>
+            <strong style="color:var(--ink); font-weight:900;">Instagram:</strong>
             <a href="https://www.instagram.com/light_and_memory_audio?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr"
                target="_blank" rel="noopener noreferrer"
                style="text-decoration:underline; text-underline-offset:3px;">
@@ -787,15 +907,19 @@
             </a>
           </div>
           <div style="margin-top:8px">
-            <strong style="color:var(--ink); font-weight:800;">Service area:</strong>
+            <strong style="color:var(--ink); font-weight:900;">Service area:</strong>
             <span id="areaText">Simi Valley / Moorpark / Northridge / Thousand Oaks / Santa Clarita / Porter Ranch</span>
+          </div>
+          <div style="margin-top:8px">
+            <strong style="color:var(--ink); font-weight:900;">Payments:</strong>
+            <span>Cash / Venmo / Zelle</span>
           </div>
         </div>
 
         <div class="divider"></div>
 
         <h3 style="margin-top:0">What to bring</h3>
-        <ul style="margin:0; padding-left:18px; color:var(--muted); display:grid; gap:6px;">
+        <ul style="margin:0; padding-left:18px; color:var(--muted); display:grid; gap:6px; font-weight:600;">
           <li>Your guitar + case/bag</li>
           <li>Preferred strings (or ask me to supply)</li>
           <li>Notes on tuning + gauge</li>
@@ -804,6 +928,7 @@
     </div>
   </section>
 
+  <!-- ===== FAQ ===== -->
   <section id="faq" aria-label="FAQ">
     <h2>FAQ</h2>
 
@@ -820,6 +945,19 @@
         <h3>Do you do fretwork or structural repairs?</h3>
         <p>Not currently — limited by tools/supplies for now. This will expand as the shop grows.</p>
       </div>
+
+      <div class="card">
+        <h3>What if I don’t know my string gauge?</h3>
+        <p>No problem. Tell me what you normally play and we’ll figure it out.</p>
+      </div>
+      <div class="card">
+        <h3>What tunings do you set up for?</h3>
+        <p>Standard and most common alternate tunings. Include your tuning in the booking details.</p>
+      </div>
+      <div class="card">
+        <h3>How does drop-off work?</h3>
+        <p>By appointment. We’ll confirm location and a simple handoff plan by text.</p>
+      </div>
     </div>
   </section>
 
@@ -832,7 +970,8 @@
         <img class="logoImg" src="assets/lama.jpg" alt="Light and Memory Audio logo" />
         <div>
           <div style="font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:var(--ink);">Light and Memory Audio</div>
-          <div class="tiny">Service fee: $30 • Materials/parts not included</div>
+          <div class="tiny">Service fee: $30 • Materials/parts not included • By appointment</div>
+          <div class="tiny" style="margin-top:6px">Payments: Cash / Venmo / Zelle</div>
         </div>
       </div>
 
@@ -840,13 +979,14 @@
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
         <a href="#booking">Booking</a>
+        <a href="#faq">FAQ</a>
         <a href="https://www.instagram.com/light_and_memory_audio?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="#top">Top</a>
       </div>
     </div>
 
     <div class="tiny" style="margin-top:16px">
-      © <span id="year"></span> Light and Memory Audio — Simi Valley / Moorpark / Northridge / Thousand Oaks / Santa Clarita / Porter Ranch
+      © <span id="year"></span> Light and Memory Audio — <span id="areaText2">Simi Valley / Moorpark / Northridge / Thousand Oaks / Santa Clarita / Porter Ranch</span>
     </div>
   </div>
 </footer>
@@ -858,16 +998,28 @@
   const SERVICE_AREA   = "Simi Valley / Moorpark / Northridge / Thousand Oaks / Santa Clarita / Porter Ranch";
   const HOURS_TEXT     = "By appointment";
 
+  // Footer/hero text sync
   document.getElementById("year").textContent = new Date().getFullYear();
-
   document.getElementById("emailText").textContent = BUSINESS_EMAIL;
   document.getElementById("phoneText").textContent = formatPhoneForDisplay(BUSINESS_PHONE) || BUSINESS_PHONE;
   document.getElementById("areaText").textContent = SERVICE_AREA;
+  document.getElementById("areaText2").textContent = SERVICE_AREA;
   document.getElementById("locationText").textContent = SERVICE_AREA;
   document.getElementById("hoursText").textContent = HOURS_TEXT;
 
+  // Header buttons
   document.getElementById("callBtn").href = `tel:${BUSINESS_PHONE}`;
   document.getElementById("textBtn").href = `sms:${BUSINESS_PHONE}`;
+
+  // Text-to-book (prefilled)
+  const prefill = encodeURIComponent(
+    "Hey! I’d like to book a setup/repair.\n\nGuitar/Bass:\nString gauge:\nTuning:\nIssue:\nPreferred timing:"
+  );
+  const smsHref = `sms:${BUSINESS_PHONE}?&body=${prefill}`;
+  const textBookBtn = document.getElementById("textBookBtn");
+  const textBookBtn2 = document.getElementById("textBookBtn2");
+  if(textBookBtn) textBookBtn.href = smsHref;
+  if(textBookBtn2) textBookBtn2.href = smsHref;
 
   // ===== Mobile menu wiring (safe) =====
   const menuBtn = document.getElementById("menuBtn");
@@ -879,7 +1031,7 @@
     const callBtnMobile = document.getElementById("callBtnMobile");
     const textBtnMobile = document.getElementById("textBtnMobile");
     if(callBtnMobile) callBtnMobile.href = `tel:${BUSINESS_PHONE}`;
-    if(textBtnMobile) textBtnMobile.href = `sms:${BUSINESS_PHONE}`;
+    if(textBtnMobile) textBtnMobile.href = smsHref;
 
     function openMenu(){
       mobileMenu.classList.add("open");
@@ -888,7 +1040,6 @@
       menuBtn.setAttribute("aria-expanded", "true");
       document.body.style.overflow = "hidden";
     }
-
     function closeMenu(){
       mobileMenu.classList.remove("open");
       mobileMenu.setAttribute("aria-hidden", "true");
@@ -998,7 +1149,9 @@ Notes:
       await navigator.clipboard.writeText(`Subject: ${msg.subject}\n\n${msg.body}`);
       setNotice("Copied. Paste into a text or email and send it over.", true);
     }catch{
-      setNotice("Couldn’t copy automatically on this device. Copy manually from the email that opens.", false);
+      setNotice("Couldn’t copy automatically on this device. Copy manually from the message box below.", false);
+      fallbackWrap.style.display = "block";
+      fallbackText.value = `Subject: ${msg.subject}\n\n${msg.body}`;
     }
   });
 
@@ -1010,4 +1163,3 @@ Notes:
   }
 </script>
 </body>
-</html>
